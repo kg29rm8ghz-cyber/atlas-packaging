@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Packaging Solutions — Großhandel für Einwegverpackungen | Hamburg</title>
+<meta name="description" content="Großhandel für Einwegverpackungen in Hamburg. Menüschalen, Becher, Servietten, Tragetaschen. Eigenes Lager, eigene Zustellung, feste Ansprechpartner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   ATLAS PACKAGING SOLUTIONS
+   Marke: Navy · Gold · Weiß
+   ========================================================== */
+:root{
+  --navy:    #0B1F3A;
+  --navy-2:  #12294A;
+  --navy-3:  #1D3A63;
+  --gold:    #C9972A;
+  --gold-lt: #E0B354;
+  --gold-dk: #A67C1E;
+  --white:   #FFFFFF;
+  --mist:    #F1F4F8;
+  --mist-2:  #DFE5EC;
+  --slate:   #445468;
+
+  --on-dark:   #EAEEF4;
+  --on-dark-2: rgba(234,238,244,.82);
+  --on-dark-3: rgba(234,238,244,.60);
+  --line-d: rgba(234,238,244,.16);
+  --line-l: rgba(11,31,58,.13);
+
+  --display:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --body:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --wrap:1280px; --gut:28px; --navh:78px;
+  --e:cubic-bezier(.19,1,.22,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--white);color:var(--navy);font-family:var(--body);font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.lock{overflow:hidden;height:100vh}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1;letter-spacing:-.035em;font-weight:700;font-stretch:112%}
+h1{font-size:clamp(2.25rem,4.6vw,4.1rem);font-weight:800}
+h2{font-size:clamp(2.1rem,4.6vw,3.9rem);font-weight:800}
+h3{font-size:clamp(1.18rem,1.8vw,1.5rem);font-weight:700;letter-spacing:-.02em;font-stretch:105%}
+p{margin:0 0 1.1em}
+.lead{font-size:clamp(1.05rem,1.35vw,1.22rem);line-height:1.62;color:var(--slate)}
+.lead.dk{color:var(--on-dark-2)}
+
+.tag{font-family:var(--mono);font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dk);display:inline-flex;align-items:center;gap:11px}
+.tag::before{content:"";width:16px;height:2px;background:var(--gold);flex:none}
+.tag.dk{color:var(--gold-lt)}
+.tag.dk::before{background:var(--gold-lt)}
+
+/* ================= PRELOADER ================= */
+#pre{position:fixed;inset:0;z-index:999;background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--gut) 8vh;transition:transform 1s var(--e)}
+#pre.done{transform:translateY(-101%)}
+.pre-in{max-width:var(--wrap);margin:0 auto;width:100%}
+.pre-word{font-family:var(--display);font-weight:800;font-stretch:118%;font-size:clamp(2.3rem,8.6vw,6.6rem);line-height:.9;letter-spacing:-.04em;color:var(--white);display:flex;overflow:hidden}
+.pre-word span{display:inline-block;transform:translateY(105%);animation:up .85s var(--e) forwards}
+@keyframes up{to{transform:none}}
+.pre-bar{height:2px;background:rgba(255,255,255,.18);margin-top:18px;overflow:hidden}
+.pre-bar i{display:block;height:100%;width:0;background:var(--gold)}
+.pre-meta{display:flex;justify-content:space-between;margin-top:14px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-3)}
+
+/* ================= NAV ================= */
+.nav{position:fixed;top:0;left:0;right:0;z-index:90;background:transparent;border-bottom:1px solid transparent;transition:background .45s var(--e),border-color .45s var(--e)}
+.nav.solid{background:rgba(11,31,58,.95);backdrop-filter:blur(14px) saturate(160%);border-bottom-color:var(--line-d)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--navh)}
+.brand{display:flex;align-items:center;gap:12px;color:var(--white)}
+.brand svg{width:30px;height:30px;flex:none}
+.brand-logo{width:auto;height:34px;flex:none}
+.brand-wordmark{width:auto;height:34px;flex:none}
+.brand b{font-family:var(--display);font-weight:800;font-stretch:115%;font-size:1.24rem;letter-spacing:-.02em;line-height:1}
+.brand em{font-family:var(--mono);font-style:normal;font-size:.55rem;letter-spacing:.26em;color:var(--gold-lt);display:block;margin-top:4px}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{font-size:.94rem;font-weight:500;color:var(--on-dark-2);padding:10px 16px;transition:color .25s var(--e);position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a.active::after{content:"";position:absolute;left:16px;bottom:2px;width:18px;height:2px;background:var(--gold)}
+.nav-cta{margin-left:16px;background:var(--gold);color:var(--navy)!important;padding:12px 22px!important;font-weight:600!important;border-radius:2px;transition:background .25s var(--e)!important}
+.nav-cta:hover{background:var(--gold-lt)}
+.nav-cta::after{display:none!important}
+.burger{display:none;background:none;border:0;padding:8px}
+.burger span{display:block;width:26px;height:2px;background:var(--white);margin:6px 0;transition:.35s var(--e)}
+.burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* ================= BUTTONS ================= */
+.btn{display:inline-flex;align-items:center;gap:12px;border:0;border-radius:2px;font-family:var(--body);font-size:.95rem;font-weight:600;padding:17px 30px;transition:background .3s var(--e),color .3s var(--e)}
+.btn svg{width:15px;height:15px;transition:transform .35s var(--e)}
+.btn:hover svg{transform:translateX(5px)}
+.b-gold{background:var(--gold);color:var(--navy)}
+.b-gold:hover{background:var(--gold-lt)}
+.b-navy{background:var(--navy);color:var(--white)}
+.b-navy:hover{background:var(--navy-3)}
+.b-white{background:var(--white);color:var(--navy)}
+.b-white:hover{background:var(--gold)}
+.b-out{background:transparent;color:var(--white);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.42)}
+.b-out:hover{background:rgba(255,255,255,.1);box-shadow:inset 0 0 0 1.5px var(--gold)}
+
+.page{display:none}
+.page.active{display:block}
+
+/* ================= HERO ================= */
+.hero{background:var(--navy);color:var(--on-dark);position:relative;overflow:hidden;padding:calc(var(--navh) + 70px) 0 0;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(transparent,rgba(201,151,42,.09))}
+.hero-in{position:relative;z-index:3;width:100%;padding-bottom:clamp(160px,23vh,270px);text-align:center;display:flex;flex-direction:column;align-items:center}
+.mask{overflow:hidden;display:block}
+.mask>span{display:block;transform:translateY(106%);transition:transform 1.05s var(--e)}
+.loaded .mask>span{transform:none}
+.d1>span{transition-delay:.07s}.d2>span{transition-delay:.16s}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .9s var(--e),transform .9s var(--e)}
+.loaded .fade{opacity:1;transform:none}
+.fd1{transition-delay:.36s}.fd2{transition-delay:.48s}.fd3{transition-delay:.6s}.fd4{transition-delay:.72s}
+.hero h1{color:var(--white);margin:26px auto 24px;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{color:rgba(234,238,244,.9);max-width:54ch;margin:0 auto 36px;font-size:clamp(1.02rem,1.25vw,1.15rem)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px;justify-content:center}
+.proof{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;background:var(--white);padding:20px 34px;max-width:840px;box-shadow:0 18px 46px -22px rgba(0,0,0,.55)}
+.proof div{padding-right:34px;margin-right:34px;border-right:1px solid var(--line-l);text-align:center}
+.proof div:last-child{border:0;margin:0;padding-right:0}
+.proof b{display:block;font-family:var(--display);font-size:1.04rem;font-weight:700;font-stretch:105%;color:var(--navy);letter-spacing:-.015em;margin-bottom:3px}
+.proof span{font-family:var(--mono);font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--slate)}
+
+.sky-wrap{position:absolute;left:0;right:0;bottom:0;z-index:1;pointer-events:none}
+.sky-wrap svg{width:100%;height:auto;display:block}
+.sky-wrap path{stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 2.6s var(--e)}
+.loaded .sky-wrap path{stroke-dashoffset:0}
+.sky-fill{opacity:0;transition:opacity 1.4s var(--e) 1.2s}
+.loaded .sky-fill{opacity:1}
+
+/* ==========================================================
+   LKW-FAHRT
+   ========================================================== */
+.journey{position:relative;background:var(--mist);height:330vh}
+.jstage{position:sticky;top:var(--navh);height:calc(100svh - var(--navh));display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.jhead h2{margin:16px 0 0;max-width:20ch}
+
+/* Szene */
+.scene{position:relative;height:clamp(200px,30vh,300px);margin:clamp(24px,4vh,48px) 0 0}
+.scene-sky{position:absolute;left:0;bottom:74px;width:220%;height:64%;opacity:.09;will-change:transform}
+.scene-sky svg{width:45.4545%;height:100%;float:left}
+
+.road{position:absolute;left:0;right:0;bottom:72px;height:2px;background:var(--mist-2)}
+.road-done{position:absolute;left:0;top:0;height:100%;width:0;background:var(--gold)}
+.road-tick{position:absolute;top:-4px;width:1px;height:10px;background:var(--mist-2)}
+
+.node{position:absolute;bottom:74px;z-index:2}
+.node svg{width:clamp(66px,7.6vw,98px);height:auto}
+.node .lbl{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);white-space:nowrap}
+.node.start{left:0}
+.node.end{right:0}
+
+.truck{position:absolute;bottom:72px;z-index:4;width:clamp(122px,15vw,206px);will-change:transform}
+.truck svg{width:100%;height:auto;display:block}
+.wheel{transform-box:fill-box;transform-origin:center}
+
+/* Statusleiste */
+.status{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(16px,2.4vw,30px);
+  background:var(--white);border:1px solid var(--line-l);border-left:3px solid var(--gold);
+  padding:18px clamp(20px,2.6vw,30px);margin-top:clamp(20px,3.4vh,40px);
+}
+.st-n{font-family:var(--display);font-size:clamp(1.9rem,3.4vw,2.9rem);font-weight:800;font-stretch:118%;letter-spacing:-.05em;color:var(--gold);line-height:.85}
+.st-tx b{display:block;font-family:var(--display);font-size:clamp(1.05rem,1.7vw,1.38rem);font-weight:700;font-stretch:105%;letter-spacing:-.02em;margin-bottom:3px}
+.st-tx span{display:block;font-size:.94rem;color:var(--slate);line-height:1.45}
+.st-swap{transition:opacity .22s ease,transform .22s ease}
+.st-swap.out{opacity:0;transform:translateY(7px)}
+.st-pct{font-family:var(--mono);font-size:clamp(.9rem,1.5vw,1.15rem);font-weight:500;color:var(--navy);letter-spacing:.06em;white-space:nowrap}
+.st-pct em{font-style:normal;color:var(--slate);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;display:block;margin-top:3px}
+
+/* ================= SEKTIONEN ================= */
+.sec{padding:clamp(76px,9vw,132px) 0}
+.dark{background:var(--navy);color:var(--on-dark)}
+.grey{background:var(--mist)}
+.dark h2,.dark h3{color:var(--white)}
+.split-head{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end;margin-bottom:clamp(42px,5.5vw,72px)}
+.split-head h2{margin:20px 0 0}
+.sec-head{max-width:70ch;margin-bottom:clamp(42px,5.5vw,72px)}
+.sec-head h2{margin:20px 0 18px}
+
+.caps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.cap{background:var(--white);padding:38px 30px 34px;transition:background .35s var(--e)}
+.cap:hover{background:var(--mist)}
+.cap-ic{width:34px;height:34px;color:var(--gold-dk);margin-bottom:24px}
+.cap-n{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:var(--slate);display:block;margin-bottom:14px}
+.cap h3{margin-bottom:11px}
+.cap p{font-size:.96rem;color:var(--slate);margin:0}
+
+.idx{border-top:1px solid var(--line-d)}
+.idx a{display:grid;grid-template-columns:64px 1.05fr 1.35fr 46px;gap:22px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line-d);position:relative;transition:padding .4s var(--e)}
+.idx a::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.055);transform:scaleY(0);transform-origin:bottom;transition:transform .45s var(--e)}
+.idx a:hover{padding-left:22px;padding-right:22px}
+.idx a:hover::before{transform:scaleY(1)}
+.idx a>*{position:relative;z-index:2}
+.idx .n{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;color:var(--gold-lt)}
+.idx h3{transition:color .3s var(--e)}
+.idx a:hover h3{color:var(--gold-lt)}
+.idx p{margin:0;font-size:.96rem;color:var(--on-dark-2)}
+.idx .ar{width:42px;height:42px;border:1px solid var(--line-d);border-radius:50%;display:grid;place-items:center;color:var(--on-dark-2);transition:.4s var(--e);justify-self:end}
+.idx .ar svg{width:15px;height:15px}
+.idx a:hover .ar{background:var(--gold);border-color:var(--gold);color:var(--navy);transform:rotate(-45deg)}
+
+@keyframes draw{to{stroke-dashoffset:0}}
+
+.cta{background:var(--gold);color:var(--navy);padding:clamp(58px,7vw,96px) 0;position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;right:-6%;top:-40%;width:520px;height:520px;border-radius:50%;border:1.5px solid rgba(11,31,58,.2)}
+.cta::after{content:"";position:absolute;right:2%;top:-18%;width:340px;height:340px;border-radius:50%;border:1.5px solid rgba(11,31,58,.14)}
+.cta-in{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between}
+.cta h2{color:var(--navy);max-width:15ch}
+.cta p{color:rgba(11,31,58,.8);max-width:38ch;margin:16px 0 0}
+
+/* ================= UNTERSEITEN ================= */
+.phead{background:var(--navy);color:var(--on-dark);padding:calc(var(--navh) + 72px) 0 clamp(52px,6vw,80px);position:relative;overflow:hidden}
+.phead::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line-d) 1px,transparent 1px),linear-gradient(90deg,var(--line-d) 1px,transparent 1px);background-size:88px 88px;mask-image:radial-gradient(ellipse 60% 100% at 82% 50%,#000,transparent 70%);-webkit-mask-image:radial-gradient(ellipse 60% 100% at 82% 50%,#000,transparent 70%)}
+.phead-in{position:relative;z-index:2}
+.phead h1{font-size:clamp(2.5rem,6vw,5rem);color:var(--white);margin:18px 0 20px}
+.phead p{color:var(--on-dark-2);max-width:58ch;margin:0}
+.crumb{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-3)}
+.crumb b{color:var(--gold-lt);font-weight:400}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:38px}
+.chip{font-size:.9rem;font-weight:500;padding:11px 20px;border-radius:2px;border:1px solid var(--line-l);background:var(--white);color:var(--slate);transition:.25s var(--e)}
+.chip:hover{border-color:var(--navy);color:var(--navy)}
+.chip.on{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.prod{background:var(--white);padding:32px 28px 28px;position:relative;transition:background .35s var(--e)}
+.prod::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--gold);transition:width .45s var(--e)}
+.prod:hover{background:var(--mist)}
+.prod:hover::after{width:100%}
+.prod .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dk);display:block;margin-bottom:14px}
+.prod h3{margin-bottom:14px}
+.prod ul{margin:0;padding:0;list-style:none}
+.prod ul li{font-size:.94rem;color:var(--slate);padding-left:18px;position:relative;margin-bottom:7px}
+.prod ul li::before{content:"";position:absolute;left:0;top:.66em;width:8px;height:1.5px;background:var(--gold)}
+.prod .st{margin-top:20px;padding-top:15px;border-top:1px solid var(--line-l);font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.note{background:var(--navy);color:var(--on-dark);padding:38px 36px;margin-top:44px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+.note p{margin:0;color:var(--on-dark-2);font-size:.98rem;max-width:62ch}
+.note h3{margin-bottom:10px}
+
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.c-side{background:var(--navy);color:var(--on-dark);padding:clamp(34px,4vw,52px)}
+.c-side h3{margin-bottom:26px}
+.cline{padding:20px 0;border-bottom:1px solid var(--line-d)}
+.cline:last-child{border:0}
+.cline span{font-family:var(--mono);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:7px}
+.cline b{font-family:var(--display);font-size:1.14rem;font-weight:700;font-stretch:105%;color:var(--white);letter-spacing:-.015em}
+.cline a{color:var(--gold-lt)}
+.cline small{display:block;font-size:.88rem;color:var(--on-dark-2);margin-top:5px}
+.ph{display:inline-block;color:var(--on-dark-2);border-bottom:1px dashed rgba(234,238,244,.45);font-family:var(--mono);font-size:.88rem}
+.ph.lt{color:var(--slate);border-bottom-color:var(--line-l)}
+.form{background:var(--white);padding:clamp(34px,4vw,52px)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:18px;display:flex;flex-direction:column}
+.field label{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
+.field input,.field select,.field textarea{font-family:var(--body);font-size:1rem;padding:14px 15px;border-radius:2px;width:100%;border:1px solid var(--line-l);background:var(--white);color:var(--navy);transition:border-color .25s var(--e),box-shadow .25s var(--e)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,151,42,.2)}
+.field textarea{resize:vertical;min-height:126px}
+.form .btn{width:100%;justify-content:center;margin-top:8px}
+.priv{font-size:.83rem;color:var(--slate);margin:16px 0 0;line-height:1.5}
+.form-ok{display:none;padding:clamp(34px,4vw,52px);background:var(--white);text-align:center}
+.form-ok.show{display:block}
+.ok-ic{width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;margin:0 auto 22px}
+.ok-ic svg{width:26px;height:26px}
+.form-ok p{color:var(--slate);margin:10px 0 0}
+
+.legal{max-width:76ch}
+.legal h2{font-size:clamp(1.3rem,2.2vw,1.7rem);margin:48px 0 16px;font-stretch:105%}
+.legal h2:first-of-type{margin-top:0}
+.legal p{font-size:1rem;color:var(--slate)}
+.legal strong{color:var(--navy)}
+.alert{background:var(--mist);border-left:3px solid var(--gold);padding:24px 26px;margin-bottom:48px}
+.alert p{margin:0;font-size:.96rem}
+
+.foot{background:var(--navy);color:var(--on-dark);padding:clamp(64px,7vw,96px) 0 30px;overflow:hidden}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:52px}
+.foot p{color:var(--on-dark-2);font-size:.96rem;max-width:32ch}
+.foot h4{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:18px;font-weight:500}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot ul li{margin-bottom:11px}
+.foot ul a,.foot ul span{color:var(--on-dark-2);font-size:.96rem;transition:color .25s var(--e)}
+.foot ul a:hover{color:var(--gold-lt)}
+.foot-mark{font-family:var(--display);font-weight:800;font-stretch:125%;letter-spacing:-.04em;font-size:clamp(3rem,13vw,11rem);line-height:.8;color:rgba(201,151,42,.09);margin:0 0 -.1em;user-select:none}
+.foot-bot{border-top:1px solid var(--line-d);padding-top:24px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-3)}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .85s var(--e),transform .85s var(--e)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}
+.reveal[data-d="3"]{transition-delay:.24s}.reveal[data-d="4"]{transition-delay:.32s}
+
+.mbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:80;background:var(--navy);border-top:1px solid var(--line-d);padding:11px 14px;grid-template-columns:1fr 1fr;gap:10px}
+.mbar a{display:flex;align-items:center;justify-content:center;padding:14px;border-radius:2px;font-size:.9rem;font-weight:600}
+.mbar .a1{background:var(--gold);color:var(--navy)}
+.mbar .a2{background:transparent;color:var(--on-dark);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.3)}
+
+/* ================= LAUFBAND IM HERO ================= */
+.mq-band{position:relative;overflow:hidden;max-width:700px;margin:0 auto 26px;padding:9px 0;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mq-track{display:flex;width:max-content;animation:mqrun 30s linear infinite}
+.mq-track>span{font-family:var(--mono);font-size:.73rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);white-space:nowrap}
+.mq-track i{font-style:normal;color:rgba(234,238,244,.4);margin:0 20px}
+@keyframes mqrun{to{transform:translateX(-50%)}}
+
+/* ================= MARKENBAND ================= */
+.brandband{background:var(--white);padding:clamp(52px,6.5vw,88px) 0;border-bottom:1px solid var(--line-l)}
+.bb-in{display:grid;grid-template-columns:auto 1fr;gap:clamp(26px,4vw,58px);align-items:center}
+.bb-mark{width:clamp(70px,8vw,104px);height:auto;flex:none;color:var(--navy)}
+.bb-name{font-family:var(--display);font-weight:800;font-stretch:118%;letter-spacing:-.035em;font-size:clamp(1.8rem,4.2vw,3.2rem);line-height:.94;color:var(--navy)}
+.bb-name em{font-style:normal;color:var(--gold-dk)}
+.bb-sub{font-family:var(--mono);font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--slate);display:block;margin-top:12px;padding-top:12px;border-top:2px solid var(--gold);width:fit-content}
+.bb-txt{max-width:56ch;margin:18px 0 0;color:var(--slate);font-size:1.02rem}
+
+/* ================= HELLE SORTIMENTS-LISTE ================= */
+.idx.lt{border-top-color:var(--line-l)}
+.idx.lt a{border-bottom-color:var(--line-l)}
+.idx.lt a::before{background:var(--white)}
+.idx.lt .n{color:var(--gold-dk)}
+.idx.lt h3{color:var(--navy)}
+.idx.lt a:hover h3{color:var(--gold-dk)}
+.idx.lt p{color:var(--slate)}
+.idx.lt .ar{border-color:var(--line-l);color:var(--slate)}
+.idx.lt a:hover .ar{background:var(--navy);border-color:var(--navy);color:var(--white)}
+
+/* ================= GRIECHISCHER BEREICH ================= */
+.hellas{background:var(--white);position:relative;overflow:hidden;padding:clamp(70px,8.5vw,120px) 0}
+.meander-band{height:22px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='22'%3E%3Cg fill='none' stroke='%230B1F3A' stroke-width='2'%3E%3Cpath d='M0 21h30'/%3E%3Cpath d='M5 21V5h19v10h-10v-5h5'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat-x;background-position:center;opacity:.9}
+.meander-band.flip{transform:scaleY(-1)}
+.hellas-in{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(34px,5vw,72px);align-items:center;margin:clamp(44px,5vw,68px) 0}
+.gr-eyebrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.gr-eyebrow b{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.16em;color:var(--gold-dk)}
+.gr-eyebrow span{font-family:var(--mono);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--slate)}
+.gr-stripes{display:flex;flex-direction:column;gap:2px;width:34px;flex:none}
+.gr-stripes i{display:block;height:3px;background:var(--navy)}
+.hellas h2{margin:20px 0 20px}
+.hellas .lead{max-width:52ch}
+.gr-list{list-style:none;margin:22px 0 28px;padding:0;display:grid;gap:10px}
+.gr-list li{position:relative;padding-left:26px;font-size:1rem;color:var(--slate)}
+.gr-list li::before{content:"";position:absolute;left:0;top:.52em;width:14px;height:8px;border:2px solid var(--gold);border-right:0;border-top:0}
+.gr-list b{color:var(--navy);font-weight:600}
+
+.napkin{aspect-ratio:1/.92;background:var(--navy);position:relative;overflow:hidden}
+.napkin .inner{position:absolute;inset:9%;border:1.5px solid rgba(255,255,255,.32);display:grid;place-items:center}
+.napkin .inner svg{width:70%;color:var(--white)}
+.napkin .inner svg path{stroke-dasharray:640;stroke-dashoffset:640}
+.reveal.in .napkin .inner svg path{animation:draw 2.3s var(--e) .3s forwards}
+.napkin .flag{position:absolute;top:0;right:0;display:flex;flex-direction:column;width:76px}
+.napkin .flag i{display:block;height:7px;background:var(--white);opacity:.9}
+.napkin .flag i:nth-child(even){background:transparent}
+.napkin .lbl{position:absolute;left:0;bottom:0;background:var(--gold);color:var(--navy);font-family:var(--mono);font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;padding:10px 18px}
+
+.gr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.gr-card{background:var(--white);padding:30px 26px 26px;position:relative;transition:background .35s var(--e)}
+.gr-card:hover{background:var(--mist)}
+.gr-card::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--navy)}
+.gr-card:nth-child(2)::before{background:var(--gold)}
+.gr-card h3{font-size:1.1rem;margin-bottom:9px}
+.gr-card p{font-size:.94rem;color:var(--slate);margin:0}
+.gr-card .gk{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--gold-dk);display:block;margin-bottom:12px}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:940px){
+  .hellas-in{grid-template-columns:1fr}
+  .napkin{max-width:440px;order:-1}
+  .gr-cards{grid-template-columns:1fr}
+  .bb-in{grid-template-columns:1fr;gap:24px}
+}
+@media(max-width:1080px){
+  .caps{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1.4fr 1fr 1fr}
+}
+@media(max-width:940px){
+  .contact,.split-head{grid-template-columns:1fr}
+  .idx a{grid-template-columns:44px 1fr 42px;gap:16px}
+  .idx a p{display:none}
+  .note{grid-template-columns:1fr}
+  .journey{height:280vh}
+}
+@media(max-width:760px){
+  body{font-size:16.5px;padding-bottom:74px}
+  .burger{display:block}
+  .nav,.nav.solid{background:rgba(11,31,58,.97);backdrop-filter:blur(14px)}
+  .nav-links{position:fixed;top:var(--navh);left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:14px 20px 26px;border-bottom:1px solid var(--line-d);transform:translateY(-140%);transition:transform .45s var(--e)}
+  .nav-links.open{transform:none}
+  .nav-links a{padding:15px 6px;font-size:1.02rem}
+  .nav-cta{margin:12px 0 0;justify-content:center;text-align:center}
+  .proof{flex-direction:column;gap:16px}
+  .proof{padding:18px 22px}
+  .proof div{border:0;padding:0;margin:0}
+  .caps,.prods,.fgrid,.foot-grid{grid-template-columns:1fr}
+  .status{grid-template-columns:auto 1fr;gap:14px;padding:15px 18px}
+  .st-pct{grid-column:1/-1;display:flex;align-items:baseline;gap:10px}
+  .st-pct em{margin:0}
+  .st-tx span{display:none}
+  .journey{height:250vh}
+  .scene{height:165px}
+  .mbar{display:grid}
+  .cta-in{flex-direction:column;align-items:flex-start}
+  .hero-in{padding-bottom:150px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal,.fade{opacity:1;transform:none}
+  .mask>span{transform:none}
+  .sky-wrap path{stroke-dashoffset:0}
+  .sky-fill{opacity:1}
+  .journey{height:auto}
+  .jstage{position:static;height:auto;padding:70px 0}
+}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body class="lock">
+
+<!-- ================= PRELOADER ================= -->
+<div id="pre">
+  <div class="pre-in">
+    <div class="pre-word">
+      <span style="animation-delay:.05s">A</span><span style="animation-delay:.09s">T</span><span style="animation-delay:.13s">L</span><span style="animation-delay:.17s">A</span><span style="animation-delay:.21s">S</span>
+      <span style="animation-delay:.25s">&nbsp;</span>
+      <span style="animation-delay:.29s">P</span><span style="animation-delay:.33s">A</span><span style="animation-delay:.37s">C</span><span style="animation-delay:.41s">K</span><span style="animation-delay:.45s">A</span><span style="animation-delay:.49s">G</span><span style="animation-delay:.53s">I</span><span style="animation-delay:.57s">N</span><span style="animation-delay:.61s">G</span>
+    </div>
+    <div class="pre-bar"><i id="prebar"></i></div>
+    <div class="pre-meta"><span>Solutions · Hamburg</span><span id="prenum">0</span></div>
+  </div>
+</div>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#/" class="brand" aria-label="Atlas Packaging Solutions Startseite">
+      <img src="logo-icon.png" alt="" class="brand-logo" aria-hidden="true">
+      <img src="logo-wordmark.png" alt="Atlas Packaging Solutions" class="brand-wordmark">
+    </a>
+    <button class="burger" id="burger" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navlinks">
+      <a href="#/" data-r="/">Start</a>
+      <a href="#/produkte" data-r="/produkte">Produkte</a>
+      <a href="#/kontakt" data-r="/kontakt">Kontakt</a>
+      <a href="#/impressum" data-r="/impressum">Impressum</a>
+      <a href="#/kontakt" class="nav-cta">Angebot anfordern</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ================= STARTSEITE ================= -->
+<section class="page" id="p-home">
+
+  <header class="hero" id="hero">
+    <div class="wrap hero-in">
+      <div class="mq-band fade fd1" aria-label="Großhandel für Gastronomie, Hamburg und Umgebung, individuelle Servietten, sofort lieferbar">
+        <div class="mq-track" id="heroMq"></div>
+      </div>
+      <h1>
+        <span class="mask"><span>Verpackung,</span></span>
+        <span class="mask d1"><span>die pünktlich</span></span>
+        <span class="mask d2"><span><em>ankommt.</em></span></span>
+      </h1>
+      <p class="lead fade fd2">Menüschalen, Becher, Servietten und Tragetaschen für Restaurants, Imbisse und Cafés im Hamburger Raum. Aus eigenem Lager, mit eigenem Fahrzeug zugestellt — ein Ansprechpartner statt fünf Lieferanten.</p>
+      <div class="hero-actions fade fd3">
+        <a href="#/kontakt" class="btn b-gold">Angebot anfordern
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#/produkte" class="btn b-out">Sortiment ansehen</a>
+      </div>
+      <div class="proof fade fd4">
+        <div><b>Eigenes Lager</b><span>Lieferfähig ab Bestand</span></div>
+        <div><b>Eigene Zustellung</b><span>Kein Speditionsfenster</span></div>
+        <div><b>Hamburg &amp; Umland</b><span>Liefergebiet</span></div>
+      </div>
+    </div>
+
+    <div class="sky-wrap" aria-hidden="true">
+      <svg viewBox="0 0 1200 320" fill="none" preserveAspectRatio="xMidYMax meet">
+        <g stroke="#EAEEF4" stroke-width="1.6" opacity=".6" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M70 300v-92l26-22 26 22v92M122 300v-84l24-20 24 20v84M170 300v-96l26-22 26 22v96"/>
+          <path d="M86 262h20M136 268h20M186 258h20"/>
+          <path d="M300 300V150M300 150l-52 26M300 150l84-40M266 300l34-56M334 300l-34-56M356 118v40"/>
+          <path d="M470 300V178h150v122"/>
+          <path d="M470 178v-46q28-34 54-8t50-6q22-28 46 4v56"/>
+          <path d="M470 214h150M470 250h150M506 178v122M544 178v122M582 178v122"/>
+          <path d="M676 300v-30h56v30M676 270v-28h56v28M740 300v-28h52v28"/>
+          <path d="M860 300V166M860 166l60-30M860 166l-44 22M830 300l30-50M892 300l-32-50"/>
+          <path d="M1010 300V196h60v104M1010 196q30-42 60 0M1040 154v-42M1030 168h20M1024 232h32M1024 262h32"/>
+          <path d="M1110 300v-70h70v70M1110 254h70"/>
+        </g>
+        <g class="sky-fill">
+          <rect x="1036" y="108" width="8" height="16" fill="#C9972A"/>
+          <circle cx="356" cy="114" r="4" fill="#C9972A"/>
+          <circle cx="920" cy="134" r="4" fill="#C9972A"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+
+  <!-- ============ MARKENBAND ============ -->
+  <section class="brandband">
+    <div class="wrap bb-in">
+      <svg class="bb-mark reveal" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="26" height="26" rx="1.5" stroke="currentColor" stroke-width="1.4" opacity=".4"/>
+        <path d="M9 23 16 8l7 15" stroke="#C9972A" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M12.4 18h7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="reveal" data-d="1">
+        <div class="bb-name">ATLAS <em>Packaging Solutions</em></div>
+        <span class="bb-sub">Inhabergeführter Großhandel · Hamburg</span>
+        <p class="bb-txt">Zwei Gesellschafter, ein eigenes Lager, ein eigenes Fahrzeug — und Kunden, die uns beim Vornamen kennen. Wir beliefern Restaurants, Imbisse und Cafés im Hamburger Raum persönlich, statt sie durch ein Bestellportal zu schicken.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LKW-FAHRT ============ -->
+  <section class="journey" id="journey">
+    <div class="jstage">
+      <div class="wrap">
+        <div class="jhead">
+          <span class="tag">Von uns zu Ihnen</span>
+          <h2>Vom Lager in Hamburg<br>direkt an Ihre Tür.</h2>
+        </div>
+
+        <div class="scene" id="scene">
+          <div class="scene-sky" id="sceneSky" aria-hidden="true"></div>
+
+          <div class="node start" aria-hidden="true">
+            <svg viewBox="0 0 110 76" fill="none">
+              <path d="M8 74V32L55 6l47 26v42" stroke="#0B1F3A" stroke-width="2.2" stroke-linejoin="round"/>
+              <rect x="34" y="44" width="42" height="30" fill="#0B1F3A"/>
+              <path d="M34 52h42M34 60h42M34 68h42" stroke="#fff" stroke-width="1.4" opacity=".45"/>
+              <rect x="46" y="22" width="18" height="9" fill="#C9972A"/>
+            </svg>
+            <span class="lbl">Unser Lager</span>
+          </div>
+
+          <div class="node end" aria-hidden="true">
+            <svg viewBox="0 0 110 76" fill="none">
+              <path d="M14 74V30h82v44" stroke="#0B1F3A" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M8 30 21 12h68l13 18" stroke="#0B1F3A" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M14 30h82" stroke="#C9972A" stroke-width="5"/>
+              <rect x="28" y="44" width="24" height="18" fill="#0B1F3A" opacity=".8"/>
+              <rect x="64" y="44" width="22" height="30" fill="#C9972A"/>
+            </svg>
+            <span class="lbl">Ihr Betrieb</span>
+          </div>
+
+          <div class="truck" id="truck">
+            <svg viewBox="0 0 270 108" fill="none" aria-hidden="true">
+              <ellipse cx="138" cy="105" rx="122" ry="3.5" fill="#0B1F3A" opacity=".1"/>
+              <rect x="8" y="18" width="156" height="54" rx="1.5" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.4"/>
+              <rect x="8" y="42" width="156" height="10" fill="#C9972A"/>
+              <text x="86" y="36" text-anchor="middle" font-family="Archivo, Arial" font-size="16" font-weight="800" fill="#0B1F3A" letter-spacing="1.5">ATLAS</text>
+              <rect x="22" y="72" width="128" height="6" fill="#0B1F3A" opacity=".55"/>
+              <path d="M168 72V30q0-4 4-4h44l14 17 16 2q5 1 5 6v21z" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="2.4" stroke-linejoin="round"/>
+              <path d="M180 34h32l10 13h-42z" fill="#EAEEF4"/>
+              <rect x="236" y="56" width="13" height="6" rx="1" fill="#C9972A"/>
+              <g class="wheel" id="w1"><circle cx="54" cy="86" r="16" fill="#0B1F3A"/><circle cx="54" cy="86" r="6.5" fill="#FFFFFF"/><path d="M54 74v24M42 86h24" stroke="#FFFFFF" stroke-width="1.6" opacity=".55"/></g>
+              <g class="wheel" id="w2"><circle cx="100" cy="86" r="16" fill="#0B1F3A"/><circle cx="100" cy="86" r="6.5" fill="#FFFFFF"/><path d="M100 74v24M88 86h24" stroke="#FFFFFF" stroke-width="1.6" opacity=".55"/></g>
+              <g class="wheel" id="w3"><circle cx="222" cy="86" r="16" fill="#0B1F3A"/><circle cx="222" cy="86" r="6.5" fill="#FFFFFF"/><path d="M222 74v24M210 86h24" stroke="#FFFFFF" stroke-width="1.6" opacity=".55"/></g>
+            </svg>
+          </div>
+
+          <div class="road" id="road"><div class="road-done" id="roadDone"></div></div>
+        </div>
+
+        <div class="status">
+          <span class="st-n st-swap" id="stN">01</span>
+          <div class="st-tx st-swap" id="stT">
+            <b>Bestellung geht ein</b>
+            <span>Per Telefon, WhatsApp oder Formular — ein Foto Ihres letzten Lieferscheins genügt.</span>
+          </div>
+          <span class="st-pct"><span id="stP">0 %</span><em>Fortschritt</em></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="split-head">
+        <div class="reveal">
+          <span class="tag">Was uns unterscheidet</span>
+          <h2>Ein Lieferant, der<br>ans Telefon geht.</h2>
+        </div>
+        <p class="lead reveal" data-d="1">Wir sind kein Katalogversand. Wir kennen Ihre Karte, Ihren Verbrauch und Ihre Lieferzeiten — und richten das Sortiment danach aus.</p>
+      </div>
+      <div class="caps">
+        <div class="cap reveal">
+          <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8.5 12 4l9 4.5v7L12 20l-9-4.5v-7Z"/><path d="M3 8.5 12 13l9-4.5M12 13v7"/></svg>
+          <span class="cap-n">01</span><h3>Eigenes Lager</h3>
+          <p>Standardartikel liegen bei uns, nicht beim Hersteller. Keine Vorlaufzeit, keine Mindestmenge aus fremden Katalogen.</p>
+        </div>
+        <div class="cap reveal" data-d="1">
+          <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 7h11v9H2z"/><path d="M13 10h4.5L21 13.2V16h-8z"/><circle cx="6.5" cy="18" r="1.9"/><circle cx="17" cy="18" r="1.9"/></svg>
+          <span class="cap-n">02</span><h3>Eigener Fuhrpark</h3>
+          <p>Wir stellen selbst zu — zu einer festen Uhrzeit, die nicht mitten in Ihren Mittagsservice fällt.</p>
+        </div>
+        <div class="cap reveal" data-d="2">
+          <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-9A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 11h7M8.5 14.5h4"/></svg>
+          <span class="cap-n">03</span><h3>Nachbestellung per Nachricht</h3>
+          <p>Ihre letzte Bestellung ist hinterlegt. „Wie beim letzten Mal, doppelt Servietten" genügt — kein Portal, kein Login.</p>
+        </div>
+        <div class="cap reveal" data-d="3">
+          <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6.5v5.2c0 4.6 3.3 8.4 8 9.3 4.7-.9 8-4.7 8-9.3V6.5L12 3Z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg>
+          <span class="cap-n">04</span><h3>Sortiment für griechische Küche</h3>
+          <p>Gyros-Boxen, Alu-Schalen für Ofengerichte, Servietten mit griechischem Motiv aus eigener Produktion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sortiment -->
+  <section class="sec grey">
+    <div class="wrap">
+      <div class="split-head">
+        <div class="reveal">
+          <span class="tag">Sortiment</span>
+          <h2>Alles zwischen<br>Küche und Kunde.</h2>
+        </div>
+        <p class="lead reveal" data-d="1">Sechs Warengruppen decken den täglichen Bedarf. Artikel außerhalb der Liste beschaffen wir auf Anfrage.</p>
+      </div>
+      <div class="idx lt">
+        <a href="#/produkte" class="reveal"><span class="n">01</span><h3>Menüschalen &amp; Boxen</h3><p>Alu-Schalen, Bagasse-Menüboxen, Gyros- und Dönerverpackung</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#/produkte" class="reveal"><span class="n">02</span><h3>Becher &amp; Deckel</h3><p>Heiß- und Kaltgetränke, Deckel und Zubehör — auch bedruckt</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#/produkte" class="reveal"><span class="n">03</span><h3>Servietten &amp; Tischbedarf</h3><p>Zellstoff und Airlaid, dazu Servietten mit griechischem Aufdruck</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#/produkte" class="reveal"><span class="n">04</span><h3>Tragetaschen &amp; Tüten</h3><p>Papiertragetaschen, Bäckertüten, fettdichte Snacktüten</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#/produkte" class="reveal"><span class="n">05</span><h3>Besteck &amp; Einwegartikel</h3><p>Holz und CPLA, Sets im Beutel, konform zur Einwegkunststoffverordnung</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a href="#/produkte" class="reveal"><span class="n">06</span><h3>Folien, Hygiene &amp; Reinigung</h3><p>Frischhalte- und Alufolie, Handschuhe, Müllbeutel, Reiniger</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Griechischer Bereich -->
+  <section class="hellas">
+    <div class="meander-band" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hellas-in">
+        <div class="reveal">
+          <div class="napkin">
+            <div class="flag" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="inner">
+              <svg viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round" stroke-linecap="square" aria-hidden="true">
+                <path d="M10 50V20h30v20H25v-10h30v30h30V20h30v20H85v-10h30v30h30V20h15"/>
+              </svg>
+            </div>
+            <span class="lbl">Eigenproduktion</span>
+          </div>
+        </div>
+
+        <div class="reveal" data-d="1">
+          <div class="gr-eyebrow">
+            <span class="gr-stripes" aria-hidden="true"><i></i><i></i><i></i></span>
+            <b>ΕΛΛΗΝΙΚΗ ΚΟΥΖΙΝΑ</b>
+            <span>Griechische Gastronomie</span>
+          </div>
+          <h2>Wir kennen<br>die griechische Karte.</h2>
+          <p class="lead">Griechische Restaurants und Tavernen in Hamburg sind unser Schwerpunkt — nicht als Nebengeschäft, sondern als das, worauf unser Sortiment ausgerichtet ist. Von der Alu-Schale fürs Ofengericht bis zur Serviette mit Mäander-Motiv aus eigener Produktion.</p>
+          <ul class="gr-list">
+            <li><b>Servietten mit Mäander-Motiv</b> — eigens für griechische Gastronomie produziert, auf Wunsch mit Ihrem Restaurantnamen</li>
+            <li><b>Gyros-, Souvláki- und Pita-Verpackung</b> — fettdicht, klappbar, stapelbar</li>
+            <li><b>Alu-Schalen für Ofengerichte</b> — Moussaka, Pastitsio, Kleftiko: grill- und ofenfest bis 1.400 ml</li>
+            <li><b>Becher für Ayran und Tzatziki</b> — dicht schließende Deckel, auslaufsicher im Transport</li>
+          </ul>
+          <a href="#/kontakt" class="btn b-navy">Muster anfordern
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="gr-cards">
+        <div class="gr-card reveal">
+          <span class="gk">Μαίανδρος</span>
+          <h3>Eigenes Serviettenmotiv</h3>
+          <p>Kein Katalogartikel: Wir lassen das Mäander-Muster selbst drucken. Motiv, Farbe und Menge stimmen wir mit Ihnen ab.</p>
+        </div>
+        <div class="gr-card reveal" data-d="1">
+          <span class="gk">Δείγμα</span>
+          <h3>Muster vor der Bestellung</h3>
+          <p>Sie sehen und fühlen die Serviette, bevor Sie sich entscheiden. Muster bringen wir beim nächsten Besuch mit.</p>
+        </div>
+        <div class="gr-card reveal" data-d="2">
+          <span class="gk">Παράδοση</span>
+          <h3>Lieferung nach Ihrer Karte</h3>
+          <p>Wir kennen die Mengen, die eine Taverne pro Woche verbraucht — und richten Rhythmus und Bestand danach aus.</p>
+        </div>
+      </div>
+    </div>
+    <div class="meander-band flip" aria-hidden="true" style="margin-top:clamp(44px,5vw,68px)"></div>
+  </section>
+
+  <div class="cta">
+    <div class="wrap cta-in">
+      <div>
+        <h2>Sagen Sie uns, was ausgeht.</h2>
+        <p>Angebot am selben Werktag — unverbindlich, ohne Vertragsbindung und ohne Mindestabnahme.</p>
+      </div>
+      <a href="#/kontakt" class="btn b-gold">Jetzt anfragen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUKTE ================= -->
+<section class="page" id="p-produkte">
+  <div class="phead"><div class="wrap phead-in">
+    <span class="crumb">Start <b>/</b> Produkte</span>
+    <h1>Sortiment</h1>
+    <p>Unser Kernsortiment für Gastronomiebetriebe. Artikel, die hier nicht aufgeführt sind, beschaffen wir in der Regel trotzdem.</p>
+  </div></div>
+
+  <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
+    <div class="wrap">
+      <div class="filters" id="filters">
+        <button class="chip on" data-f="alle">Alle Produkte</button>
+        <button class="chip" data-f="togo">Außer Haus</button>
+        <button class="chip" data-f="tisch">Tisch &amp; Service</button>
+        <button class="chip" data-f="kueche">Küche &amp; Hygiene</button>
+        <button class="chip" data-f="griechisch">Griechische Küche</button>
+      </div>
+      <div class="prods" id="prods">
+        <article class="prod reveal" data-c="togo griechisch"><span class="n">Menüschalen</span><h3>Alu-Schalen mit Deckel</h3><ul><li>Größen von 400 bis 1.400 ml</li><li>Glatter oder gewellter Rand</li><li>Ofen- und grillfest</li></ul><div class="st">Ab Lager</div></article>
+        <article class="prod reveal" data-c="togo griechisch"><span class="n">Menüschalen</span><h3>Gyros- &amp; Dönerboxen</h3><ul><li>Fettdichte Innenbeschichtung</li><li>Klappdeckel, stapelbar</li><li>Auch als Bagasse-Variante</li></ul><div class="st">Ab Lager</div></article>
+        <article class="prod reveal" data-c="togo"><span class="n">Menüschalen</span><h3>Bagasse-Menüboxen</h3><ul><li>Zuckerrohrfaser, kompostierbar</li><li>1-, 2- und 3-geteilt</li><li>Mikrowellen- und kühlgeeignet</li></ul><div class="st">Ab Lager</div></article>
+        <article class="prod reveal" data-c="togo"><span class="n">Becher</span><h3>Kaffeebecher &amp; Deckel</h3><ul><li>Einwandig und doppelwandig</li><li>200, 300 und 400 ml</li><li>Passende Deckel je Größe</li></ul><div class="st">Bedruckbar auf Anfrage</div></article>
+        <article class="prod reveal" data-c="togo"><span class="n">Becher</span><h3>Kaltgetränkebecher</h3><ul><li>Klarbecher für Softdrinks und Ayran</li><li>Deckel mit und ohne Strohhalmloch</li><li>Auch als PLA-Variante</li></ul><div class="st">Ab Lager</div></article>
+        <article class="prod reveal" data-c="tisch griechisch"><span class="n">Eigenproduktion</span><h3>Servietten mit griechischem Motiv</h3><ul><li>Mäander-Muster</li><li>Optional mit Ihrem Logo</li><li>Für Tavernen und Restaurants</li></ul><div class="st">Muster anfordern</div></article>
+        <article class="prod reveal" data-c="tisch"><span class="n">Servietten</span><h3>Zellstoffservietten</h3><ul><li>1-, 2- und 3-lagig</li><li>33×33 und 40×40 cm</li><li>Weiß und farbig</li></ul><div class="st">Ab Lager</div></article>
+        <article class="prod reveal" data-c="tisch"><span class="n">Tischbedarf</span><h3>Besteck &amp; Sets</h3><ul><li>Holz und CPLA</li><li>Einzeln oder als Set im Beutel</li><li>Konform zur Einwegkunststoffverordnung</li></ul><div class="st">Ab Lager</div></article>
+        <article class="prod reveal" data-c="togo"><span class="n">Transport</span><h3>Papiertragetaschen</h3><ul><li>Flach- und Kordelhenkel</li><li>Klein bis XL</li><li>Kraft braun oder weiß</li></ul><div class="st">Bedruckbar auf Anfrage</div></article>
+        <article class="prod reveal" data-c="togo"><span class="n">Transport</span><h3>Snack- &amp; Bäckertüten</h3><ul><li>Fettdicht für Pommes und Gebäck</li><li>Mit und ohne Sichtfenster</li><li>Alle gängigen Formate</li></ul><div class="st">Ab Lager</div></article>
+        <article class="prod reveal" data-c="kueche"><span class="n">Küche</span><h3>Folien &amp; Backpapier</h3><ul><li>Frischhalte- und Alufolie</li><li>Backpapier als Rolle und Zuschnitt</li><li>Profibreiten für Großküchen</li></ul><div class="st">Ab Lager</div></article>
+        <article class="prod reveal" data-c="kueche"><span class="n">Hygiene</span><h3>Handschuhe &amp; Reinigung</h3><ul><li>Einweghandschuhe in allen Größen</li><li>Müllbeutel, Wischtücher, Papierrollen</li><li>Reiniger für Küche und Gastraum</li></ul><div class="st">Ab Lager</div></article>
+      </div>
+      <div class="note reveal">
+        <div>
+          <h3>Preise auf Anfrage</h3>
+          <p>Wir arbeiten mit Staffelpreisen nach Menge und Lieferrhythmus — deshalb steht hier keine Preisliste. Schicken Sie uns Ihre Artikel oder ein Foto Ihres letzten Lieferscheins und Sie erhalten ein konkretes Angebot am selben Werktag.</p>
+        </div>
+        <a href="#/kontakt" class="btn b-gold">Angebot anfordern
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<section class="page" id="p-kontakt">
+  <div class="phead"><div class="wrap phead-in">
+    <span class="crumb">Start <b>/</b> Kontakt</span>
+    <h1>Kontakt</h1>
+    <p>Sagen Sie uns, was Sie brauchen — oder schicken Sie einfach ein Foto Ihres letzten Lieferscheins. Antwort am selben Werktag.</p>
+  </div></div>
+
+  <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
+    <div class="wrap">
+      <div class="contact reveal">
+        <div class="c-side">
+          <h3>Direkter Draht</h3>
+          <div class="cline"><span>Telefon</span><b class="ph">[Nummer eintragen]</b><small>Mo–Fr, <span class="ph">[Uhrzeit]</span></small></div>
+          <div class="cline"><span>WhatsApp</span><b class="ph">[Nummer eintragen]</b><small>Für Nachbestellungen am schnellsten</small></div>
+          <div class="cline"><span>E-Mail</span><b><a href="mailto:info@atlascargo.de">info@atlascargo.de</a></b><small>Antwort in der Regel am selben Werktag</small></div>
+          <div class="cline"><span>Lager &amp; Abholung</span><b class="ph">[Adresse eintragen]</b><small>Abholung nach Absprache möglich</small></div>
+          <div class="cline"><span>Liefergebiet</span><b>Hamburg &amp; Umland</b><small>Zustellung mit eigenem Fahrzeug</small></div>
+        </div>
+        <div class="form" id="formbox">
+          <span class="tag">Anfrageformular</span>
+          <h3 style="margin:18px 0 26px">Was brauchen Sie?</h3>
+          <div class="fgrid">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" placeholder="Vor- und Nachname"></div>
+            <div class="field"><label for="f-firma">Betrieb</label><input id="f-firma" type="text" placeholder="Name Ihres Restaurants"></div>
+          </div>
+          <div class="fgrid">
+            <div class="field"><label for="f-mail">E-Mail</label><input id="f-mail" type="email" placeholder="name@betrieb.de"></div>
+            <div class="field"><label for="f-tel">Telefon</label><input id="f-tel" type="tel" placeholder="Für Rückfragen"></div>
+          </div>
+          <div class="field"><label for="f-art">Anliegen</label>
+            <select id="f-art"><option>Angebot für Verpackungen</option><option>Servietten mit griechischem Motiv</option><option>Regelmäßige Belieferung besprechen</option><option>Etwas anderes</option></select>
+          </div>
+          <div class="field"><label for="f-txt">Nachricht</label><textarea id="f-txt" placeholder="Welche Artikel, welche Mengen und in welchem Rhythmus?"></textarea></div>
+          <button class="btn b-gold" id="send">Anfrage senden
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="priv">Ihre Angaben verwenden wir ausschließlich zur Bearbeitung dieser Anfrage. Weitere Informationen in der Datenschutzerklärung.</p>
+        </div>
+        <div class="form-ok" id="formok">
+          <div class="ok-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4.5 4.5L19 7"/></svg></div>
+          <h3>Anfrage ist angekommen</h3>
+          <p>Wir melden uns am selben Werktag mit einem konkreten Angebot zurück.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= IMPRESSUM ================= -->
+<section class="page" id="p-impressum">
+  <div class="phead"><div class="wrap phead-in">
+    <span class="crumb">Start <b>/</b> Impressum</span>
+    <h1>Impressum</h1>
+    <p>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG).</p>
+  </div></div>
+
+  <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
+    <div class="wrap legal">
+      <div class="alert"><p><strong>Vor Veröffentlichung ausfüllen.</strong> Alle markierten Felder müssen durch echte Daten ersetzt werden. Ein unvollständiges Impressum ist abmahnfähig — bei einer GbR sind beide Gesellschafter mit vollem Namen zu nennen.</p></div>
+
+      <h2>Anbieter</h2>
+      <p><span class="ph lt">[Firmenname der GbR]</span><br><span class="ph lt">[Straße und Hausnummer]</span><br><span class="ph lt">[PLZ]</span> Hamburg</p>
+
+      <h2>Vertreten durch</h2>
+      <p>Gesellschafter: <span class="ph lt">[Vollständiger Name 1]</span>, <span class="ph lt">[Vollständiger Name 2]</span></p>
+
+      <h2>Kontakt</h2>
+      <p>Telefon: <span class="ph lt">[Telefonnummer]</span><br>E-Mail: info@atlascargo.de</p>
+
+      <h2>Umsatzsteuer-Identifikationsnummer</h2>
+      <p>Gemäß § 27 a Umsatzsteuergesetz: <span class="ph lt">[USt-IdNr. oder Steuernummer]</span></p>
+      <p style="font-size:.9rem">Liegt keine USt-IdNr. vor, kann alternativ die Wirtschafts-Identifikationsnummer angegeben oder der Abschnitt gestrichen werden.</p>
+
+      <h2>Verantwortlich für den Inhalt</h2>
+      <p><span class="ph lt">[Name]</span>, Anschrift wie oben.</p>
+
+      <h2>Verpackungsregister (LUCID)</h2>
+      <p>Registrierungsnummer nach § 9 VerpackG: <span class="ph lt">[LUCID-Nummer]</span></p>
+      <p style="font-size:.9rem">Als Inverkehrbringer von Verpackungen ist die Registrierung bei der Zentralen Stelle Verpackungsregister verpflichtend. Falls noch nicht erfolgt, sollte das vor dem Start der Website erledigt werden.</p>
+
+      <h2>Streitschlichtung</h2>
+      <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>Als Diensteanbieter sind wir für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.</p>
+
+      <h2>Haftung für Links</h2>
+      <p>Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für diese fremden Inhalte können wir keine Gewähr übernehmen. Bei Bekanntwerden von Rechtsverletzungen entfernen wir derartige Links umgehend.</p>
+
+      <h2>Urheberrecht</h2>
+      <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Vervielfältigung, Bearbeitung und Verbreitung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors.</p>
+
+      <p style="margin-top:44px;font-size:.88rem">Dieses Impressum ist eine Vorlage und ersetzt keine Rechtsberatung. Lassen Sie es vor Veröffentlichung prüfen, insbesondere die Angaben zur GbR und zum Verpackungsregister.</p>
+    </div>
+  </section>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#/" class="brand" style="margin-bottom:20px">
+          <img src="logo-icon.png" alt="" class="brand-logo" aria-hidden="true">
+          <img src="logo-wordmark.png" alt="Atlas Packaging Solutions" class="brand-wordmark">
+        </a>
+        <p>Großhandel für Einwegverpackungen in Hamburg. Eigenes Lager, eigene Zustellung, feste Ansprechpartner.</p>
+      </div>
+      <div><h4>Navigation</h4><ul><li><a href="#/">Startseite</a></li><li><a href="#/produkte">Produkte</a></li><li><a href="#/kontakt">Kontakt</a></li><li><a href="#/impressum">Impressum</a></li></ul></div>
+      <div><h4>Sortiment</h4><ul><li><a href="#/produkte">Menüschalen &amp; Boxen</a></li><li><a href="#/produkte">Becher &amp; Deckel</a></li><li><a href="#/produkte">Servietten</a></li><li><a href="#/produkte">Tragetaschen</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li><a href="mailto:info@atlascargo.de">info@atlascargo.de</a></li><li><span>Telefon: [eintragen]</span></li><li><span>Hamburg &amp; Umland</span></li></ul></div>
+    </div>
+    <div class="foot-mark" aria-hidden="true">ATLAS</div>
+    <div class="foot-bot"><span>© <span id="yr">2026</span> Atlas Packaging Solutions</span><span>Gastronomiebedarf · Hamburg</span></div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="#/kontakt" class="a1">Angebot anfordern</a>
+  <a href="mailto:info@atlascargo.de" class="a2">E-Mail</a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Laufband im Hero ---------- */
+  var hm=document.getElementById('heroMq');
+  if(hm){
+    var words=['Großhandel für Gastronomie','Hamburg und Umgebung','Individuelle Servietten','Sofort lieferbar'];
+    var run=words.map(function(w){return w+'<i>✦</i>';}).join('');
+    hm.innerHTML='<span>'+run+run+'</span><span>'+run+run+'</span>';
+  }
+
+  /* ---------- Skyline hinter der Szene ---------- */
+  var sky='<svg viewBox="0 0 800 200" fill="none" preserveAspectRatio="none">'
+    +'<g stroke="#0B1F3A" stroke-width="2.4" stroke-linejoin="round" fill="none">'
+    +'<path d="M20 198v-58l22-18 22 18v58M70 198v-48l18-14 18 14v48"/>'
+    +'<path d="M180 198V96M180 96l-38 18M180 96l60-28M158 198l22-38M202 198l-22-38"/>'
+    +'<path d="M310 198v-74h104v74M310 124v-28q19-22 35-6t33-4q15-18 36 2v36M310 152h104"/>'
+    +'<path d="M460 198v-24h42v24M460 174v-20h42v20M514 198v-20h38v20"/>'
+    +'<path d="M620 198V108M620 108l42-20M620 108l-30 14M600 198l20-34M642 198l-22-34"/>'
+    +'<path d="M710 198v-66h46v66M710 132q23-30 46 0M733 104V78"/>'
+    +'</g></svg>';
+  var ss=document.getElementById('sceneSky');
+  if(ss) ss.innerHTML=sky+sky;
+
+  /* ---------- Markierungen auf der Straße ---------- */
+  var road=document.getElementById('road');
+  if(road){
+    [25,50,75].forEach(function(pos){
+      var t=document.createElement('span');
+      t.className='road-tick'; t.style.left=pos+'%';
+      road.appendChild(t);
+    });
+  }
+
+  /* ---------- Preloader ---------- */
+  var pre=document.getElementById('pre'),bar=document.getElementById('prebar'),num=document.getElementById('prenum');
+  function launch(){
+    document.body.classList.remove('lock');
+    pre.classList.add('done');
+    document.getElementById('hero').classList.add('loaded');
+    setTimeout(function(){pre.style.display='none';},1100);
+    observeAll(); onScroll();
+  }
+  if(RM){ launch(); }
+  else{
+    var v=0,t=setInterval(function(){
+      v+=Math.random()*13+5;
+      if(v>=100){v=100;clearInterval(t);setTimeout(launch,320);}
+      bar.style.width=v+'%'; num.textContent=Math.round(v);
+    },76);
+  }
+
+  /* ---------- LKW-Fahrt ---------- */
+  var journey=document.getElementById('journey'),scene=document.getElementById('scene'),
+      truck=document.getElementById('truck'),roadDone=document.getElementById('roadDone'),
+      sceneSky=document.getElementById('sceneSky'),
+      stN=document.getElementById('stN'),stT=document.getElementById('stT'),stP=document.getElementById('stP'),
+      wheels=[document.getElementById('w1'),document.getElementById('w2'),document.getElementById('w3')];
+
+  var STEPS=[
+    ['01','Bestellung geht ein','Per Telefon, WhatsApp oder Formular — ein Foto Ihres letzten Lieferscheins genügt.'],
+    ['02','Kommissionierung im Lager','Ware liegt bei uns vor Ort. Kein Warten auf Nachschub vom Hersteller.'],
+    ['03','Unterwegs durch Hamburg','Eigenes Fahrzeug, eigener Fahrer, feste Route durch Hamburg und Umland.'],
+    ['04','Übergabe im Betrieb','Zustellung zur vereinbarten Uhrzeit — nicht mitten im Mittagsservice.']
+  ];
+  var curIdx=-1;
+
+  function setStep(i){
+    if(i===curIdx) return;
+    curIdx=i;
+    stN.classList.add('out'); stT.classList.add('out');
+    setTimeout(function(){
+      stN.textContent=STEPS[i][0];
+      stT.innerHTML='<b>'+STEPS[i][1]+'</b><span>'+STEPS[i][2]+'</span>';
+      stN.classList.remove('out'); stT.classList.remove('out');
+    },200);
+  }
+
+  function drive(){
+    if(!journey||!scene||journey.offsetParent===null) return;
+    var r=journey.getBoundingClientRect();
+    var navh=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--navh'))||78;
+    var total=journey.offsetHeight-(window.innerHeight-navh);
+    var p=Math.min(1,Math.max(0,(-r.top)/(total||1)));
+
+    var sw=scene.clientWidth,tw=truck.offsetWidth;
+    var startX=sw*0.085,endX=sw-tw-sw*0.055;
+    var x=startX+(endX-startX)*p;
+
+    truck.style.transform='translateX('+x+'px)';
+    var deg=(x/(2*Math.PI*16))*360*0.5;
+    wheels.forEach(function(w){ if(w) w.style.transform='rotate('+deg+'deg)'; });
+
+    roadDone.style.width=((x+tw*0.5)/sw*100)+'%';
+    if(sceneSky) sceneSky.style.transform='translateX('+(-p*sw*0.5)+'px)';
+
+    stP.textContent=Math.round(p*100)+' %';
+    setStep(Math.min(3,Math.floor(p*4.001)));
+  }
+
+  /* ---------- Router ---------- */
+  var routes={'/':'p-home','/produkte':'p-produkte','/kontakt':'p-kontakt','/impressum':'p-impressum'};
+  function route(){
+    var hash=location.hash.replace('#','')||'/';
+    if(!routes[hash]) hash='/';
+    Object.keys(routes).forEach(function(k){
+      document.getElementById(routes[k]).classList.toggle('active',k===hash);
+    });
+    document.querySelectorAll('.nav-links a[data-r]').forEach(function(el){
+      el.classList.toggle('active',el.getAttribute('data-r')===hash);
+    });
+    document.getElementById('navlinks').classList.remove('open');
+    document.getElementById('burger').classList.remove('open');
+    window.scrollTo(0,0);
+    onScroll();
+    setTimeout(observeAll,40);
+  }
+  window.addEventListener('hashchange',route);
+
+  /* ---------- Scroll ---------- */
+  var nav=document.getElementById('nav'),ticking=false;
+  function onScroll(){
+    var onHome=(location.hash.replace('#','')||'/')==='/';
+    nav.classList.toggle('solid',!onHome||window.scrollY>60);
+    drive();
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){ticking=true;requestAnimationFrame(function(){onScroll();ticking=false;});}
+  },{passive:true});
+  window.addEventListener('resize',onScroll);
+
+  /* ---------- Reveal ---------- */
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+  },{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+  function observeAll(){
+    document.querySelectorAll('.page.active .reveal:not(.in)').forEach(function(el){io.observe(el);});
+  }
+
+  /* ---------- Menü ---------- */
+  var burger=document.getElementById('burger');
+  burger.addEventListener('click',function(){
+    var open=document.getElementById('navlinks').classList.toggle('open');
+    burger.classList.toggle('open',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+
+  /* ---------- Filter ---------- */
+  document.getElementById('filters').addEventListener('click',function(e){
+    var btn=e.target.closest('.chip'); if(!btn) return;
+    document.querySelectorAll('#filters .chip').forEach(function(c){c.classList.remove('on')});
+    btn.classList.add('on');
+    var f=btn.getAttribute('data-f');
+    document.querySelectorAll('#prods .prod').forEach(function(p){
+      p.style.display=(f==='alle'||p.getAttribute('data-c').indexOf(f)>-1)?'':'none';
+    });
+  });
+
+  /* ---------- Formular ---------- */
+  document.getElementById('send').addEventListener('click',function(){
+    document.getElementById('formbox').style.display='none';
+    document.getElementById('formok').classList.add('show');
+  });
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  route();
+})();
+</script>
+</body>
+</html>
