@@ -34,7 +34,7 @@
   --display:'Archivo','Helvetica Neue',Arial,sans-serif;
   --body:'Instrument Sans',system-ui,-apple-system,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
-  --wrap:1280px; --gut:28px; --navh:78px;
+  --wrap:1280px; --gut:28px; --navh:92px;
   --e:cubic-bezier(.19,1,.22,1);
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -71,24 +71,25 @@ p{margin:0 0 1.1em}
 .pre-meta{display:flex;justify-content:space-between;margin-top:14px;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-3)}
 
 /* ================= NAV ================= */
-.nav{position:fixed;top:0;left:0;right:0;z-index:90;background:transparent;border-bottom:1px solid transparent;transition:background .45s var(--e),border-color .45s var(--e)}
-.nav.solid{background:rgba(11,31,58,.95);backdrop-filter:blur(14px) saturate(160%);border-bottom-color:var(--line-d)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:90;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-l);box-shadow:0 1px 0 rgba(11,31,58,.02);transition:box-shadow .45s var(--e)}
+.nav.solid{box-shadow:0 8px 28px rgba(11,31,58,.09)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:var(--navh)}
-.brand{display:flex;align-items:center;gap:12px;color:var(--white)}
+.brand{display:flex;align-items:center;gap:16px;color:var(--navy);transition:opacity .25s var(--e)}
+.brand:hover{opacity:.82}
 .brand svg{width:30px;height:30px;flex:none}
-.brand-logo{width:auto;height:34px;flex:none}
-.brand-wordmark{width:auto;height:34px;flex:none}
+.brand-logo{width:auto;height:44px;flex:none}
+.brand-wordmark{width:auto;height:44px;flex:none}
 .brand b{font-family:var(--display);font-weight:800;font-stretch:115%;font-size:1.24rem;letter-spacing:-.02em;line-height:1}
 .brand em{font-family:var(--mono);font-style:normal;font-size:.55rem;letter-spacing:.26em;color:var(--gold-lt);display:block;margin-top:4px}
 .nav-links{display:flex;align-items:center;gap:2px}
-.nav-links a{font-size:.94rem;font-weight:500;color:var(--on-dark-2);padding:10px 16px;transition:color .25s var(--e);position:relative}
-.nav-links a:hover,.nav-links a.active{color:var(--white)}
+.nav-links a{font-size:.94rem;font-weight:500;color:var(--slate);padding:10px 16px;transition:color .25s var(--e);position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--navy)}
 .nav-links a.active::after{content:"";position:absolute;left:16px;bottom:2px;width:18px;height:2px;background:var(--gold)}
-.nav-cta{margin-left:16px;background:var(--gold);color:var(--navy)!important;padding:12px 22px!important;font-weight:600!important;border-radius:2px;transition:background .25s var(--e)!important}
-.nav-cta:hover{background:var(--gold-lt)}
+.nav-cta{margin-left:16px;background:var(--gold);color:var(--navy)!important;padding:12px 22px!important;font-weight:600!important;border-radius:2px;box-shadow:0 2px 10px rgba(201,151,42,.28);transition:background .25s var(--e),box-shadow .25s var(--e)!important}
+.nav-cta:hover{background:var(--gold-lt);box-shadow:0 4px 16px rgba(201,151,42,.36)}
 .nav-cta::after{display:none!important}
 .burger{display:none;background:none;border:0;padding:8px}
-.burger span{display:block;width:26px;height:2px;background:var(--white);margin:6px 0;transition:.35s var(--e)}
+.burger span{display:block;width:26px;height:2px;background:var(--navy);margin:6px 0;transition:.35s var(--e)}
 .burger.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
@@ -406,8 +407,8 @@ p{margin:0 0 1.1em}
 @media(max-width:760px){
   body{font-size:16.5px;padding-bottom:74px}
   .burger{display:block}
-  .nav,.nav.solid{background:rgba(11,31,58,.97);backdrop-filter:blur(14px)}
-  .nav-links{position:fixed;top:var(--navh);left:0;right:0;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:14px 20px 26px;border-bottom:1px solid var(--line-d);transform:translateY(-140%);transition:transform .45s var(--e)}
+  .nav,.nav.solid{background:rgba(255,255,255,.98);backdrop-filter:blur(14px)}
+  .nav-links{position:fixed;top:var(--navh);left:0;right:0;background:var(--white);flex-direction:column;align-items:stretch;gap:0;padding:14px 20px 26px;border-bottom:1px solid var(--line-l);box-shadow:0 12px 24px rgba(11,31,58,.08);transform:translateY(-140%);transition:transform .45s var(--e)}
   .nav-links.open{transform:none}
   .nav-links a{padding:15px 6px;font-size:1.02rem}
   .nav-cta{margin:12px 0 0;justify-content:center;text-align:center}
@@ -457,7 +458,7 @@ p{margin:0 0 1.1em}
   <div class="wrap nav-in">
     <a href="#/" class="brand" aria-label="Atlas Packaging Solutions Startseite">
       <img src="logo-icon.png" alt="" class="brand-logo" aria-hidden="true">
-      <img src="logo-wordmark.png" alt="Atlas Packaging Solutions" class="brand-wordmark">
+      <img src="logo-wordmark-navy.png" alt="Atlas Packaging Solutions" class="brand-wordmark">
     </a>
     <button class="burger" id="burger" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navlinks">
@@ -811,7 +812,7 @@ p{margin:0 0 1.1em}
         <div class="c-side">
           <h3>Direkter Draht</h3>
           <div class="cline"><span>Telefon</span><b>0155 65250969</b><small>Für Rückfragen und Bestellungen</small></div>
-          <div class="cline"><span>WhatsApp</span><b class="ph">[Nummer eintragen]</b><small>Für Nachbestellungen am schnellsten</small></div>
+          <div class="cline"><span>WhatsApp</span><b>0155 65250969</b><small>Für Nachbestellungen am schnellsten</small></div>
           <div class="cline"><span>E-Mail</span><b><a href="mailto:acargo@web.de">acargo@web.de</a></b><small>Antwort in der Regel am selben Werktag</small></div>
           <div class="cline"><span>Lager &amp; Abholung</span><b>Wetternstieg 11, 21079 Hamburg</b><small>Abholung nach Absprache möglich</small></div>
           <div class="cline"><span>Liefergebiet</span><b>Hamburg &amp; Umland</b><small>Zustellung mit eigenem Fahrzeug</small></div>
@@ -857,7 +858,7 @@ p{margin:0 0 1.1em}
 
   <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
     <div class="wrap legal">
-      <div class="alert"><p><strong>Vor Veröffentlichung ausfüllen.</strong> Alle markierten Felder müssen durch echte Daten ersetzt werden. Ein unvollständiges Impressum ist abmahnfähig — bei einer GbR sind beide Gesellschafter mit vollem Namen zu nennen.</p></div>
+      <div class="alert"><p><strong>Vor Veröffentlichung ausfüllen.</strong> Die LUCID-Registrierungsnummer unten fehlt noch und muss durch die echte Nummer ersetzt werden — ein unvollständiges Impressum ist abmahnfähig.</p></div>
 
       <h2>Anbieter</h2>
       <p>Atlas Cargo<br>Wetternstieg 11<br>21079 Hamburg</p>
@@ -869,8 +870,7 @@ p{margin:0 0 1.1em}
       <p>Telefon: 0155 65250969<br>E-Mail: acargo@web.de</p>
 
       <h2>Umsatzsteuer-Identifikationsnummer</h2>
-      <p>Gemäß § 27 a Umsatzsteuergesetz: <span class="ph lt">[USt-IdNr. oder Steuernummer]</span></p>
-      <p style="font-size:.9rem">Liegt keine USt-IdNr. vor, kann alternativ die Wirtschafts-Identifikationsnummer angegeben oder der Abschnitt gestrichen werden.</p>
+      <p>Gemäß § 27 a Umsatzsteuergesetz: DE 455606873</p>
 
       <h2>Verantwortlich für den Inhalt</h2>
       <p>Dogan Yasar &amp; Robin Rolf Kafle, Anschrift wie oben.</p>
