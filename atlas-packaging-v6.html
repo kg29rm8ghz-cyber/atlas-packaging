@@ -7,7 +7,7 @@
 <meta name="description" content="Großhandel für Einwegverpackungen in Hamburg. Menüschalen, Becher, Servietten, Tragetaschen. Eigenes Lager, eigene Zustellung, feste Ansprechpartner.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Alex+Brush&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Philosopher:ital,wght@1,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ==========================================================
    ATLAS PACKAGING SOLUTIONS
@@ -372,10 +372,14 @@ p{margin:0 0 1.1em}
 
 .napkin{aspect-ratio:1/.92;background:var(--navy);position:relative;overflow:hidden}
 .napkin .inner{position:absolute;inset:9%;border:1.5px solid rgba(255,255,255,.32);display:grid;place-items:center}
-.napkin .inner svg{width:86%;color:var(--gold)}
-.txt-draw text{fill:none;stroke:currentColor;stroke-width:1.1;font-family:'Alex Brush',cursive;font-weight:400;font-size:40px;stroke-dasharray:2200;stroke-dashoffset:2200;transition:stroke-dashoffset 2.4s var(--e)}
-.reveal.in .txt-draw text{stroke-dashoffset:0}
-.txt-draw text:nth-child(2){transition-delay:2.3s}
+.pen-write{font-family:'Philosopher',serif;font-style:italic;font-weight:700;color:var(--gold);text-align:center;line-height:1.6}
+.pen-write .pw-line{display:block;font-size:clamp(1.35rem,2.4vw,1.7rem);letter-spacing:.01em}
+.pen-write .ch{display:inline-block;opacity:0;transform:translateY(7px);filter:blur(3px);transition:opacity .5s var(--e),transform .5s var(--e),filter .5s var(--e);transition-delay:calc(var(--i) * .06s)}
+.reveal.in .pen-write .ch{opacity:1;transform:none;filter:blur(0)}
+.pen-write .cursor{display:inline-block;width:2px;height:.85em;background:var(--gold);margin-left:3px;vertical-align:-.08em;opacity:0}
+.reveal.in .pen-write .cursor{animation:pen-blink .5s steps(1) 1.55s 3,pen-fade .3s var(--e) 3.05s forwards}
+@keyframes pen-blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes pen-fade{to{opacity:0}}
 .napkin .flag{position:absolute;top:0;right:0;display:flex;flex-direction:column;width:76px}
 .napkin .flag i{display:block;height:7px;background:var(--white);opacity:.9}
 .napkin .flag i:nth-child(even){background:transparent}
@@ -671,12 +675,10 @@ p{margin:0 0 1.1em}
           <div class="napkin">
             <div class="flag" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             <div class="inner">
-              <svg viewBox="0 0 200 200" aria-hidden="true">
-                <g class="txt-draw" text-anchor="middle">
-                  <text x="100" y="98">Individuell</text>
-                  <text x="100" y="148">bedruckbar</text>
-                </g>
-              </svg>
+              <div class="pen-write" aria-label="Individuell bedruckbar">
+                <span class="pw-line"><span class="ch" style="--i:0">I</span><span class="ch" style="--i:1">n</span><span class="ch" style="--i:2">d</span><span class="ch" style="--i:3">i</span><span class="ch" style="--i:4">v</span><span class="ch" style="--i:5">i</span><span class="ch" style="--i:6">d</span><span class="ch" style="--i:7">u</span><span class="ch" style="--i:8">e</span><span class="ch" style="--i:9">l</span><span class="ch" style="--i:10">l</span></span>
+                <span class="pw-line"><span class="ch" style="--i:14">b</span><span class="ch" style="--i:15">e</span><span class="ch" style="--i:16">d</span><span class="ch" style="--i:17">r</span><span class="ch" style="--i:18">u</span><span class="ch" style="--i:19">c</span><span class="ch" style="--i:20">k</span><span class="ch" style="--i:21">b</span><span class="ch" style="--i:22">a</span><span class="ch" style="--i:23">r</span><span class="cursor"></span></span>
+              </div>
             </div>
             <span class="lbl">Eigenproduktion</span>
           </div>
