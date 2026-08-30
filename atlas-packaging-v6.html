@@ -373,7 +373,11 @@ p{margin:0 0 1.1em}
 .napkin{aspect-ratio:1/.92;background:var(--navy);position:relative;overflow:hidden}
 .napkin .inner{position:absolute;inset:9%;border:1.5px solid rgba(255,255,255,.32);display:grid;place-items:center}
 .pen-write{font-family:'Philosopher',serif;font-style:italic;font-weight:700;color:var(--gold);text-align:center;line-height:1.6}
-.pen-write .pw-line{display:block;font-size:clamp(1.35rem,2.4vw,1.7rem);letter-spacing:.01em}
+.pen-write .pw-line{display:block;font-size:clamp(2.1rem,4.6vw,3.1rem);letter-spacing:.01em}
+.pen-frame{display:flex;flex-direction:column;align-items:center;gap:18px}
+.meander-strip{width:56%;color:var(--gold);overflow:visible}
+.meander-strip .mk{fill:none;stroke:currentColor;stroke-width:2.2;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .5s var(--e);transition-delay:calc(2s + var(--j) * .12s)}
+.reveal.in .meander-strip .mk{stroke-dashoffset:0}
 .pen-write .ch{display:inline-block;opacity:0;transform:translateY(7px);filter:blur(3px);transition:opacity .5s var(--e),transform .5s var(--e),filter .5s var(--e);transition-delay:calc(var(--i) * .06s)}
 .reveal.in .pen-write .ch{opacity:1;transform:none;filter:blur(0)}
 .pen-write .cursor{display:inline-block;width:2px;height:.85em;background:var(--gold);margin-left:3px;vertical-align:-.08em;opacity:0}
@@ -675,9 +679,23 @@ p{margin:0 0 1.1em}
           <div class="napkin">
             <div class="flag" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
             <div class="inner">
-              <div class="pen-write" aria-label="Individuell bedruckbar">
-                <span class="pw-line"><span class="ch" style="--i:0">I</span><span class="ch" style="--i:1">n</span><span class="ch" style="--i:2">d</span><span class="ch" style="--i:3">i</span><span class="ch" style="--i:4">v</span><span class="ch" style="--i:5">i</span><span class="ch" style="--i:6">d</span><span class="ch" style="--i:7">u</span><span class="ch" style="--i:8">e</span><span class="ch" style="--i:9">l</span><span class="ch" style="--i:10">l</span></span>
-                <span class="pw-line"><span class="ch" style="--i:14">b</span><span class="ch" style="--i:15">e</span><span class="ch" style="--i:16">d</span><span class="ch" style="--i:17">r</span><span class="ch" style="--i:18">u</span><span class="ch" style="--i:19">c</span><span class="ch" style="--i:20">k</span><span class="ch" style="--i:21">b</span><span class="ch" style="--i:22">a</span><span class="ch" style="--i:23">r</span><span class="cursor"></span></span>
+              <div class="pen-frame">
+                <svg class="meander-strip" viewBox="0 0 80 20" aria-hidden="true">
+                  <path class="mk" style="--j:0" d="M0 20 L0 0 L20 0 L20 10 L10 10 L10 5 L15 5 L15 15 L5 15 L5 20 Z"/>
+                  <path class="mk" style="--j:1" transform="translate(20,0)" d="M0 20 L0 0 L20 0 L20 10 L10 10 L10 5 L15 5 L15 15 L5 15 L5 20 Z"/>
+                  <path class="mk" style="--j:2" transform="translate(40,0)" d="M0 20 L0 0 L20 0 L20 10 L10 10 L10 5 L15 5 L15 15 L5 15 L5 20 Z"/>
+                  <path class="mk" style="--j:3" transform="translate(60,0)" d="M0 20 L0 0 L20 0 L20 10 L10 10 L10 5 L15 5 L15 15 L5 15 L5 20 Z"/>
+                </svg>
+                <div class="pen-write" aria-label="Individuell bedruckbar">
+                  <span class="pw-line"><span class="ch" style="--i:0">I</span><span class="ch" style="--i:1">n</span><span class="ch" style="--i:2">d</span><span class="ch" style="--i:3">i</span><span class="ch" style="--i:4">v</span><span class="ch" style="--i:5">i</span><span class="ch" style="--i:6">d</span><span class="ch" style="--i:7">u</span><span class="ch" style="--i:8">e</span><span class="ch" style="--i:9">l</span><span class="ch" style="--i:10">l</span></span>
+                  <span class="pw-line"><span class="ch" style="--i:14">b</span><span class="ch" style="--i:15">e</span><span class="ch" style="--i:16">d</span><span class="ch" style="--i:17">r</span><span class="ch" style="--i:18">u</span><span class="ch" style="--i:19">c</span><span class="ch" style="--i:20">k</span><span class="ch" style="--i:21">b</span><span class="ch" style="--i:22">a</span><span class="ch" style="--i:23">r</span><span class="cursor"></span></span>
+                </div>
+                <svg class="meander-strip" viewBox="0 0 80 20" aria-hidden="true">
+                  <path class="mk" style="--j:4" d="M0 20 L0 0 L20 0 L20 10 L10 10 L10 5 L15 5 L15 15 L5 15 L5 20 Z"/>
+                  <path class="mk" style="--j:5" transform="translate(20,0)" d="M0 20 L0 0 L20 0 L20 10 L10 10 L10 5 L15 5 L15 15 L5 15 L5 20 Z"/>
+                  <path class="mk" style="--j:6" transform="translate(40,0)" d="M0 20 L0 0 L20 0 L20 10 L10 10 L10 5 L15 5 L15 15 L5 15 L5 20 Z"/>
+                  <path class="mk" style="--j:7" transform="translate(60,0)" d="M0 20 L0 0 L20 0 L20 10 L10 10 L10 5 L15 5 L15 15 L5 15 L5 20 Z"/>
+                </svg>
               </div>
             </div>
             <span class="lbl">Eigenproduktion</span>
