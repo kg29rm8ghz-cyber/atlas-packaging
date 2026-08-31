@@ -272,7 +272,9 @@ p{margin:0 0 1.1em}
 
 .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
 .catp{background:var(--white);display:flex;flex-direction:column}
-.catp-ph{aspect-ratio:1/1;background:var(--mist);border-bottom:1px solid var(--line-l);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--slate)}
+.catp-ph{aspect-ratio:1/1;background:var(--mist);border-bottom:1px solid var(--line-l);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--slate);overflow:hidden}
+.catp-ph.has-img{padding:0}
+.catp-ph.has-img img{width:100%;height:100%;object-fit:cover;display:block}
 .catp-ph svg{width:28px;height:28px;opacity:.5}
 .catp-ph span{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
 .catp h3{padding:18px 18px 8px;font-size:1.02rem}
@@ -820,7 +822,7 @@ p{margin:0 0 1.1em}
   <div class="phead"><div class="wrap phead-in">
     <span class="crumb"><a href="#/">Start</a> <b>/</b> <a href="#/produkte">Produkte</a> <b>/</b> <span id="catCrumbName"></span></span>
     <h1 id="catTitle"></h1>
-    <p>Alle Artikel dieser Kategorie im Überblick — Bilder und Beschreibungen folgen in Kürze.</p>
+    <p id="catIntro">Alle Artikel dieser Kategorie im Überblick.</p>
   </div></div>
 
   <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
@@ -1057,19 +1059,38 @@ p{margin:0 0 1.1em}
     'servietten-tischbedarf':{name:'Servietten und Tischbedarf',products:['Servietten','Küchenrolle','Papier']},
     'einwegartikel-folien':{name:'Einwegartikel und Folien',products:['Holzgabeln','Besteck','Alufolie','Frischhaltefolie','Hygieneartikel']},
     'tragetaschen-tueten':{name:'Tragetaschen und Tüten',products:['Papiertragetaschen','Bäckertüten','Snacktüten','Hemdchentragetaschen']},
-    'gewuerze':{name:'Gewürze',products:['Gewürze','Gewürzmischungen']}
+    'gewuerze':{name:'Gewürze',products:[
+      {name:'Kreuzkümmel',img:'gewuerz-kreuzkuemmel.jpg'},
+      {name:'Griechische Gewürzmischung',img:'gewuerz-griechisch.jpg'},
+      {name:'Knoblauchpulver',img:'gewuerz-knoblauch.jpg'},
+      {name:'Muskatnuss gemahlen',img:'gewuerz-muskat.jpg'},
+      {name:'Pommes-Gewürz',img:'gewuerz-pommes.jpg'},
+      {name:'Pfeffer gemahlen',img:'gewuerz-pfeffer.jpg'},
+      {name:'Pfeffer weiß',img:'gewuerz-pfeffer-weiss.jpg'},
+      {name:'Paprika edelsüß',img:'gewuerz-paprika-edelsuess.jpg'},
+      {name:'Zwiebelpulver',img:'gewuerz-zwiebel.jpg'}
+    ]}
   };
   function renderCategory(slug){
     var c=CATEGORIES[slug];
     if(!c) return false;
     document.getElementById('catCrumbName').textContent=c.name;
     document.getElementById('catTitle').textContent=c.name;
+    var hasAnyImg=c.products.some(function(p){ return typeof p==='object'&&p.img; });
+    document.getElementById('catIntro').textContent=hasAnyImg
+      ? 'Alle Artikel dieser Kategorie im Überblick — ausführliche Beschreibungen folgen in Kürze.'
+      : 'Alle Artikel dieser Kategorie im Überblick — Bilder und Beschreibungen folgen in Kürze.';
     var grid=document.getElementById('catGrid');
     grid.innerHTML='';
-    c.products.forEach(function(name){
+    c.products.forEach(function(p){
+      var name=(typeof p==='string')?p:p.name;
+      var img=(typeof p==='object'&&p.img)?p.img:null;
       var el=document.createElement('article');
       el.className='catp';
-      el.innerHTML='<div class="catp-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5.5-5.5L4 21"/></svg><span>Bild folgt</span></div><h3>'+name+'</h3><p class="catp-desc">Produktbeschreibung folgt.</p>';
+      var phHtml=img
+        ? '<div class="catp-ph has-img"><img src="'+img+'" alt="'+name+'" loading="lazy"></div>'
+        : '<div class="catp-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5.5-5.5L4 21"/></svg><span>Bild folgt</span></div>';
+      el.innerHTML=phHtml+'<h3>'+name+'</h3><p class="catp-desc">Produktbeschreibung folgt.</p>';
       grid.appendChild(el);
     });
     return true;
