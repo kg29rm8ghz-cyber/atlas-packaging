@@ -243,7 +243,7 @@ p{margin:0 0 1.1em}
 .crumb a{color:inherit;transition:color .2s var(--e)}
 .crumb a:hover{color:var(--white)}
 
-.prod-search{position:relative;max-width:520px;margin:0 auto 36px}
+.prod-search{position:sticky;top:var(--navh);z-index:20;max-width:520px;margin:0 auto 36px;background:var(--white);padding:14px 0}
 .prod-search input{width:100%;box-sizing:border-box;padding:15px 44px 15px 46px;border:1px solid var(--line-l);border-radius:2px;font-size:1rem;font-family:var(--body);color:var(--navy);background:var(--white);transition:border-color .25s var(--e)}
 .prod-search input:focus{outline:none;border-color:var(--gold)}
 .prod-search input::placeholder{color:var(--slate);opacity:.7}
@@ -808,7 +808,7 @@ p{margin:0 0 1.1em}
     <div class="wrap">
       <div class="prod-search">
         <svg class="ps-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        <input type="text" id="prodSearch" placeholder="Produkt suchen, z. B. Cumin, Servietten, Lunchbox …" autocomplete="off">
+        <input type="text" id="prodSearch" placeholder="Produkte suchen, z. B. Menübox, Alufolie, Servietten …" autocomplete="off">
         <button type="button" id="prodSearchClear" class="ps-clear" aria-label="Suche löschen" hidden>&times;</button>
       </div>
       <div class="search-results" id="searchResults" hidden></div>
