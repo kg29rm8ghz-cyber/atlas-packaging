@@ -110,6 +110,11 @@ p{margin:0 0 1.1em}
 .page{display:none}
 .page.active{display:block}
 
+.page-transition{position:fixed;inset:0;z-index:999;background:var(--navy);transform:scaleY(0);transform-origin:bottom;pointer-events:none;display:flex;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.76,0,.24,1)}
+.page-transition.cover{transform:scaleY(1)}
+.pt-mark{height:52px;width:auto;opacity:0;transform:scale(.85);transition:opacity .3s var(--e),transform .3s var(--e)}
+.page-transition.cover .pt-mark{opacity:1;transform:scale(1);transition-delay:.22s}
+
 /* ================= HERO ================= */
 .hero{background:var(--navy);color:var(--on-dark);position:relative;overflow:hidden;padding:calc(var(--navh) + 70px) 0 0;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:58%;background:linear-gradient(transparent,rgba(201,151,42,.09))}
@@ -235,18 +240,25 @@ p{margin:0 0 1.1em}
 .chip{font-size:.9rem;font-weight:500;padding:11px 20px;border-radius:2px;border:1px solid var(--line-l);background:var(--white);color:var(--slate);transition:.25s var(--e)}
 .chip:hover{border-color:var(--navy);color:var(--navy)}
 .chip.on{background:var(--navy);border-color:var(--navy);color:var(--white)}
-.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
-.prod{background:var(--white);padding:32px 28px 28px;position:relative;transition:background .35s var(--e);cursor:pointer}
+.prods{display:flex;flex-wrap:wrap;justify-content:center;gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.prod{background:var(--white);padding:36px 30px 30px;position:relative;transition:background .35s var(--e),transform .35s var(--e),box-shadow .35s var(--e);cursor:pointer;flex:1 1 calc(20% - 1px);min-width:230px;display:flex;flex-direction:column;z-index:1}
 .prod:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 .prod::after{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--gold);transition:width .45s var(--e)}
-.prod:hover{background:var(--mist)}
+.prod:hover{background:var(--white);transform:translateY(-4px);box-shadow:0 22px 40px -20px rgba(11,31,58,.28);z-index:2}
 .prod:hover::after{width:100%}
-.prod .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dk);display:block;margin-bottom:14px}
-.prod h3{margin-bottom:14px}
+.prod .n{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dk);display:block;margin-bottom:16px}
+.prod h3{margin-bottom:12px;font-size:1.14rem}
+.prod p{margin:0;font-size:.92rem;color:var(--slate);line-height:1.6;flex:1}
 .prod ul{margin:0;padding:0;list-style:none}
 .prod ul li{font-size:.94rem;color:var(--slate);padding-left:18px;position:relative;margin-bottom:7px}
 .prod ul li::before{content:"";position:absolute;left:0;top:.66em;width:8px;height:1.5px;background:var(--gold)}
 .prod .st{margin-top:20px;padding-top:15px;border-top:1px solid var(--line-l);font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--slate)}
+.prod-ar{margin-top:22px;width:38px;height:38px;border:1px solid var(--line-l);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--slate);transition:.4s var(--e)}
+.prod-ar svg{width:15px;height:15px}
+.prod:hover .prod-ar{background:var(--gold);border-color:var(--gold);color:var(--navy);transform:rotate(-45deg)}
+@media(max-width:1100px){.prod{flex-basis:calc(33.333% - 1px)}}
+@media(max-width:760px){.prod{flex-basis:calc(50% - 1px)}}
+@media(max-width:480px){.prod{flex-basis:100%}}
 .note{background:var(--navy);color:var(--on-dark);padding:38px 36px;margin-top:44px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
 .note p{margin:0;color:var(--on-dark-2);font-size:.98rem;max-width:62ch}
 .note h3{margin-bottom:10px}
@@ -458,6 +470,11 @@ p{margin:0 0 1.1em}
     <div class="pre-bar"><i id="prebar"></i></div>
     <div class="pre-meta"><span>Solutions · Hamburg</span><span id="prenum">0</span></div>
   </div>
+</div>
+
+<!-- ================= SEITENÜBERGANG ================= -->
+<div class="page-transition" id="pageTransition" aria-hidden="true">
+  <img src="logo-icon.png" alt="" class="pt-mark">
 </div>
 
 <!-- ================= NAV ================= -->
@@ -769,11 +786,11 @@ p{margin:0 0 1.1em}
         <button class="chip" data-f="gewuerze">Gewürze</button>
       </div>
       <div class="prods" id="prods">
-        <article class="prod reveal" data-slug="menueschalen-boxen" tabindex="0" role="link" aria-label="Menüschalen &amp; Boxen ansehen"><h3>Menüschalen &amp; Boxen</h3><p>Ungeteilt, zweigeteilt und dreigeteilt, dazu Lunchboxen, Lunchbox Mini und Hamburgerboxen</p></article>
-        <article class="prod reveal" data-slug="servietten-tischbedarf" tabindex="0" role="link" aria-label="Servietten &amp; Tischbedarf ansehen"><h3>Servietten &amp; Tischbedarf</h3><p>Servietten in verschiedenen Größen und Farben, Küchenrolle und Papier</p></article>
-        <article class="prod reveal" data-slug="einwegartikel-folien" tabindex="0" role="link" aria-label="Einwegartikel &amp; Folien ansehen"><h3>Einwegartikel &amp; Folien</h3><p>Holzgabeln und Besteck, Alu- und Frischhaltefolie, verschiedene Hygieneartikel</p></article>
-        <article class="prod reveal" data-slug="tragetaschen-tueten" tabindex="0" role="link" aria-label="Tragetaschen &amp; Tüten ansehen"><h3>Tragetaschen &amp; Tüten</h3><p>Papiertragetaschen, Bäckertüten, Snacktüten und Hemdchentragetaschen</p></article>
-        <article class="prod reveal" data-slug="gewuerze" tabindex="0" role="link" aria-label="Gewürze ansehen"><h3>Gewürze</h3><p>Verschiedene Gewürze und Gewürzmischungen für die Gastronomie</p></article>
+        <article class="prod reveal" data-slug="menueschalen-boxen" tabindex="0" role="link" aria-label="Menüschalen &amp; Boxen ansehen"><span class="n">01</span><h3>Menüschalen &amp; Boxen</h3><p>Ungeteilt, zweigeteilt und dreigeteilt, dazu Lunchboxen, Lunchbox Mini und Hamburgerboxen</p><span class="prod-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
+        <article class="prod reveal" data-slug="servietten-tischbedarf" tabindex="0" role="link" aria-label="Servietten &amp; Tischbedarf ansehen"><span class="n">02</span><h3>Servietten &amp; Tischbedarf</h3><p>Servietten in verschiedenen Größen und Farben, Küchenrolle und Papier</p><span class="prod-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
+        <article class="prod reveal" data-slug="einwegartikel-folien" tabindex="0" role="link" aria-label="Einwegartikel &amp; Folien ansehen"><span class="n">03</span><h3>Einwegartikel &amp; Folien</h3><p>Holzgabeln und Besteck, Alu- und Frischhaltefolie, verschiedene Hygieneartikel</p><span class="prod-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
+        <article class="prod reveal" data-slug="tragetaschen-tueten" tabindex="0" role="link" aria-label="Tragetaschen &amp; Tüten ansehen"><span class="n">04</span><h3>Tragetaschen &amp; Tüten</h3><p>Papiertragetaschen, Bäckertüten, Snacktüten und Hemdchentragetaschen</p><span class="prod-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
+        <article class="prod reveal" data-slug="gewuerze" tabindex="0" role="link" aria-label="Gewürze ansehen"><span class="n">05</span><h3>Gewürze</h3><p>Verschiedene Gewürze und Gewürzmischungen für die Gastronomie</p><span class="prod-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
       </div>
       <div class="note reveal">
         <div>
@@ -1048,6 +1065,32 @@ p{margin:0 0 1.1em}
     return true;
   }
 
+  /* ---------- Seitenübergang ---------- */
+  var pt=document.getElementById('pageTransition');
+  var ptBusy=false;
+  function goTo(hash){
+    if(ptBusy) return;
+    if(hash===location.hash) return;
+    ptBusy=true;
+    pt.style.transformOrigin='bottom';
+    pt.classList.add('cover');
+    setTimeout(function(){
+      location.hash=hash;
+      route();
+      pt.style.transformOrigin='top';
+      pt.classList.remove('cover');
+      setTimeout(function(){ ptBusy=false; },520);
+    },500);
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#/"]');
+    if(!a) return;
+    var hash=a.getAttribute('href');
+    if(hash===location.hash||(hash==='#/'&&(location.hash===''||location.hash==='#/'))) return;
+    e.preventDefault();
+    goTo(hash);
+  });
+
   /* ---------- Router ---------- */
   var routes={'/':'p-home','/produkte':'p-produkte','/kontakt':'p-kontakt','/impressum':'p-impressum'};
   var allPages=['p-home','p-produkte','p-kontakt','p-impressum','p-kategorie'];
@@ -1118,13 +1161,13 @@ p{margin:0 0 1.1em}
   });
   document.getElementById('prods').addEventListener('click',function(e){
     var card=e.target.closest('.prod'); if(!card) return;
-    location.hash='/produkte/kategorie/'+card.getAttribute('data-slug');
+    goTo('#/produkte/kategorie/'+card.getAttribute('data-slug'));
   });
   document.getElementById('prods').addEventListener('keydown',function(e){
     if(e.key!=='Enter'&&e.key!==' ') return;
     var card=e.target.closest('.prod'); if(!card) return;
     e.preventDefault();
-    location.hash='/produkte/kategorie/'+card.getAttribute('data-slug');
+    goTo('#/produkte/kategorie/'+card.getAttribute('data-slug'));
   });
 
   /* ---------- Formular ---------- */
