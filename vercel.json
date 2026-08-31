@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    { "source": "/produkte", "destination": "/#/produkte", "permanent": true },
+    { "source": "/produkte/(.*)", "destination": "/#/produkte", "permanent": true },
+    { "source": "/kontakt", "destination": "/#/kontakt", "permanent": true },
+    { "source": "/impressum", "destination": "/#/impressum", "permanent": true },
+    { "source": "/datenschutz", "destination": "/#/datenschutz", "permanent": true },
+    { "source": "/uber-uns", "destination": "/", "permanent": true },
+    { "source": "/ueber-uns", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
