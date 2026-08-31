@@ -5,9 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atlas Packaging Solutions — Großhandel für Einwegverpackungen | Hamburg</title>
 <meta name="description" content="Großhandel für Einwegverpackungen in Hamburg. Menüschalen, Becher, Servietten, Tragetaschen. Eigenes Lager, eigene Zustellung, feste Ansprechpartner.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Philosopher:ital,wght@1,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400 900;font-stretch:75% 125%;font-display:swap;src:url('fonts/archivo-variable.woff2') format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/instrument-sans-400.woff2') format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/instrument-sans-400.woff2') format('woff2')}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/instrument-sans-400.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/jetbrains-mono-400.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/jetbrains-mono-400.woff2') format('woff2')}
+@font-face{font-family:'Philosopher';font-style:italic;font-weight:700;font-display:swap;src:url('fonts/philosopher-italic-700.woff2') format('woff2')}
+</style>
 <style>
 /* ==========================================================
    ATLAS PACKAGING SOLUTIONS
@@ -348,6 +354,25 @@ p{margin:0 0 1.1em}
 .foot ul a:hover{color:var(--gold-lt)}
 .foot-mark{font-family:var(--display);font-weight:800;font-stretch:125%;letter-spacing:-.04em;font-size:clamp(3rem,13vw,11rem);line-height:.8;color:rgba(201,151,42,.09);margin:0 0 -.1em;user-select:none}
 .foot-bot{border-top:1px solid var(--line-d);padding-top:24px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-3)}
+.foot-cookie-btn{background:none;border:0;padding:0;font:inherit;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-3);cursor:pointer;transition:color .25s var(--e)}
+.foot-cookie-btn:hover{color:var(--gold-lt)}
+
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:998;background:var(--white);border-top:1px solid var(--line-l);box-shadow:0 -12px 40px -10px rgba(11,31,58,.18);transform:translateY(110%);transition:transform .5s var(--e)}
+.cookie-banner.show{transform:none}
+.cb-in{max-width:1100px;margin:0 auto;padding:26px var(--gut);display:flex;flex-wrap:wrap;gap:22px 32px;align-items:center;justify-content:space-between}
+.cb-text{flex:1 1 420px;min-width:260px}
+.cb-text h3{font-size:1.05rem;margin-bottom:8px}
+.cb-text p{margin:0;font-size:.9rem;color:var(--slate);line-height:1.6}
+.cb-text a{color:var(--gold-dk);text-decoration:underline}
+.cb-actions{display:flex;flex-wrap:wrap;gap:12px;flex:0 0 auto}
+.cb-actions .b-out{color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--line-l)}
+.cb-actions .b-out:hover{background:var(--mist);box-shadow:inset 0 0 0 1.5px var(--line-l)}
+.cb-actions .btn{padding:13px 22px!important;white-space:nowrap}
+@media(max-width:600px){
+  .cb-in{padding:22px var(--gut) 26px}
+  .cb-actions{width:100%}
+  .cb-actions .btn{flex:1}
+}
 
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .85s var(--e),transform .85s var(--e)}
 .reveal.in{opacity:1;transform:none}
@@ -949,6 +974,45 @@ p{margin:0 0 1.1em}
     </div>
   </section>
 </section>
+
+<!-- ================= DATENSCHUTZ ================= -->
+<section class="page" id="p-datenschutz">
+  <div class="phead"><div class="wrap phead-in">
+    <span class="crumb">Start <b>/</b> Datenschutz</span>
+    <h1>Datenschutzerklärung</h1>
+    <p>Wie wir mit Ihren Daten umgehen, wenn Sie diese Website besuchen oder uns kontaktieren.</p>
+  </div></div>
+
+  <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
+    <div class="wrap legal">
+      <h2>1. Verantwortlicher</h2>
+      <p>Atlas Cargo<br>Dogan Yasar &amp; Robin Rolf Kafle<br>Wetternstieg 11<br>21079 Hamburg<br>E-Mail: acargo@web.de<br>Telefon: 0155 65250969</p>
+
+      <h2>2. Hosting</h2>
+      <p>Diese Website wird bei Vercel Inc. gehostet. Beim Aufruf der Website verarbeitet Vercel automatisch technische Verbindungsdaten (u. a. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser) in Server-Logs. Diese Verarbeitung ist zur technischen Bereitstellung der Website erforderlich (Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse an einem sicheren und funktionsfähigen Betrieb).</p>
+
+      <h2>3. Cookies</h2>
+      <p>Diese Website verwendet ausschließlich technisch notwendige Cookies bzw. lokale Speicherung (z. B. um Ihre Cookie-Auswahl zu speichern). Diese sind gemäß § 25 Abs. 2 TTDSG von der Einwilligungspflicht ausgenommen. Optionale Cookies für Statistik, Marketing oder Tracking setzen wir aktuell nicht ein. Sollte sich das künftig ändern, holen wir vorab Ihre Einwilligung über den Cookie-Hinweis ein.</p>
+
+      <h2>4. Schriftarten</h2>
+      <p>Alle auf dieser Website verwendeten Schriftarten sind lokal eingebunden (selbst gehostet). Es findet keine Verbindung zu externen Schriftarten-Anbietern statt, es werden dabei keine Daten an Dritte übertragen.</p>
+
+      <h2>5. Kontaktformular</h2>
+      <p>Wenn Sie uns über das Kontaktformular oder per E-Mail kontaktieren, verarbeiten wir die von Ihnen angegebenen Daten (u. a. Name, Betrieb, E-Mail-Adresse, Telefonnummer, Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Erfüllung vorvertraglicher Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage). Zur technischen Übermittlung nutzen wir den Dienst FormSubmit.co, der die Formulardaten an unsere E-Mail-Adresse weiterleitet. Ihre Daten werden gelöscht, sobald sie für die Bearbeitung Ihrer Anfrage nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+      <h2>6. WhatsApp-Kontakt</h2>
+      <p>Wenn Sie uns über den auf dieser Website verlinkten WhatsApp-Kontakt erreichen, gelten zusätzlich die Datenschutzbestimmungen von WhatsApp (Meta). Wir empfehlen, die Datenschutzhinweise von WhatsApp vor Nutzung zu lesen.</p>
+
+      <h2>7. Ihre Rechte</h2>
+      <p>Sie haben das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten (Art. 15 DSGVO), auf Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruch gegen die Verarbeitung (Art. 21 DSGVO). Wenden Sie sich dazu an die oben genannte Kontaktadresse. Außerdem steht Ihnen ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde zu, z. B. beim Hamburgischen Beauftragten für Datenschutz und Informationsfreiheit.</p>
+
+      <h2>8. SSL-/TLS-Verschlüsselung</h2>
+      <p>Diese Website nutzt aus Sicherheitsgründen eine SSL-/TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie am „https://" in der Adresszeile Ihres Browsers.</p>
+
+      <p style="margin-top:44px;font-size:.88rem">Diese Datenschutzerklärung ersetzt keine Rechtsberatung.</p>
+    </div>
+  </section>
+</section>
 </main>
 
 <!-- ================= FOOTER ================= -->
@@ -962,18 +1026,32 @@ p{margin:0 0 1.1em}
         </a>
         <p>Großhandel für Einwegverpackungen in Hamburg. Eigenes Lager, eigene Zustellung, feste Ansprechpartner.</p>
       </div>
-      <div><h4>Navigation</h4><ul><li><a href="#/">Startseite</a></li><li><a href="#/produkte">Produkte</a></li><li><a href="#/kontakt">Kontakt</a></li><li><a href="#/impressum">Impressum</a></li></ul></div>
+      <div><h4>Navigation</h4><ul><li><a href="#/">Startseite</a></li><li><a href="#/produkte">Produkte</a></li><li><a href="#/kontakt">Kontakt</a></li><li><a href="#/impressum">Impressum</a></li><li><a href="#/datenschutz">Datenschutz</a></li></ul></div>
       <div><h4>Sortiment</h4><ul><li><a href="#/produkte">Menüschalen &amp; Boxen</a></li><li><a href="#/produkte">Becher &amp; Deckel</a></li><li><a href="#/produkte">Servietten</a></li><li><a href="#/produkte">Tragetaschen</a></li></ul></div>
       <div><h4>Kontakt</h4><ul><li><a href="mailto:acargo@web.de">acargo@web.de</a></li><li><span>Telefon: 0155 65250969</span></li><li><span>Hamburg &amp; Umland</span></li></ul></div>
     </div>
     <div class="foot-mark" aria-hidden="true">ATLAS</div>
-    <div class="foot-bot"><span>© <span id="yr">2026</span> Atlas Packaging Solutions</span><span>Gastronomiebedarf · Hamburg</span></div>
+    <div class="foot-bot"><span>© <span id="yr">2026</span> Atlas Packaging Solutions</span><button type="button" id="cookieSettingsLink" class="foot-cookie-btn">Cookie-Einstellungen</button><span>Gastronomiebedarf · Hamburg</span></div>
   </div>
 </footer>
 
 <div class="mbar">
   <a href="#/kontakt" class="a1">Angebot anfordern</a>
   <a href="mailto:acargo@web.de" class="a2">E-Mail</a>
+</div>
+
+<!-- ================= COOKIE-HINWEIS ================= -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-Hinweis">
+  <div class="cb-in">
+    <div class="cb-text">
+      <h3>Cookies &amp; Datenschutz</h3>
+      <p>Wir verwenden nur technisch notwendige Cookies, die für den Betrieb dieser Website erforderlich sind. Optionale Cookies (z.&nbsp;B. für Statistik) setzen wir aktuell nicht ein. Mehr dazu in unserer <a href="#/datenschutz">Datenschutzerklärung</a>.</p>
+    </div>
+    <div class="cb-actions">
+      <button type="button" class="btn b-out" id="cookieReject">Nur notwendige</button>
+      <button type="button" class="btn b-gold" id="cookieAccept">Alle akzeptieren</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -1197,8 +1275,8 @@ p{margin:0 0 1.1em}
   });
 
   /* ---------- Router ---------- */
-  var routes={'/':'p-home','/produkte':'p-produkte','/kontakt':'p-kontakt','/impressum':'p-impressum'};
-  var allPages=['p-home','p-produkte','p-kontakt','p-impressum','p-kategorie'];
+  var routes={'/':'p-home','/produkte':'p-produkte','/kontakt':'p-kontakt','/impressum':'p-impressum','/datenschutz':'p-datenschutz'};
+  var allPages=['p-home','p-produkte','p-kontakt','p-impressum','p-datenschutz','p-kategorie'];
   function route(){
     var hash=location.hash.replace('#','')||'/';
     var activeId=null;
@@ -1305,6 +1383,30 @@ p{margin:0 0 1.1em}
         errBox.style.display='block';
       });
   });
+
+  /* ---------- Cookie-Hinweis ---------- */
+  var COOKIE_KEY='atlas_cookie_consent';
+  var cookieBanner=document.getElementById('cookieBanner');
+  function getConsent(){
+    try{ return JSON.parse(localStorage.getItem(COOKIE_KEY)); }catch(e){ return null; }
+  }
+  function setConsent(value){
+    try{ localStorage.setItem(COOKIE_KEY, JSON.stringify({value:value, date:new Date().toISOString()})); }catch(e){}
+    window.atlasConsent=value;
+    cookieBanner.classList.remove('show');
+  }
+  function showCookieBanner(){ cookieBanner.classList.add('show'); }
+  window.hasConsent=function(category){
+    if(category==='necessary') return true;
+    var c=getConsent();
+    return !!(c && c.value==='all');
+  };
+  var existing=getConsent();
+  if(existing){ window.atlasConsent=existing.value; }
+  else { setTimeout(showCookieBanner, 600); }
+  document.getElementById('cookieAccept').addEventListener('click',function(){ setConsent('all'); });
+  document.getElementById('cookieReject').addEventListener('click',function(){ setConsent('necessary'); });
+  document.getElementById('cookieSettingsLink').addEventListener('click',function(){ showCookieBanner(); });
 
   document.getElementById('yr').textContent=new Date().getFullYear();
   route();
