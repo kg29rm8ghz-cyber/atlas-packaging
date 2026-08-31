@@ -243,6 +243,23 @@ p{margin:0 0 1.1em}
 .crumb a{color:inherit;transition:color .2s var(--e)}
 .crumb a:hover{color:var(--white)}
 
+.prod-search{position:relative;max-width:520px;margin:0 auto 36px}
+.prod-search input{width:100%;box-sizing:border-box;padding:15px 44px 15px 46px;border:1px solid var(--line-l);border-radius:2px;font-size:1rem;font-family:var(--body);color:var(--navy);background:var(--white);transition:border-color .25s var(--e)}
+.prod-search input:focus{outline:none;border-color:var(--gold)}
+.prod-search input::placeholder{color:var(--slate);opacity:.7}
+.ps-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--slate);pointer-events:none}
+.ps-clear{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:0;background:none;color:var(--slate);font-size:1.4rem;line-height:1;cursor:pointer;border-radius:50%;transition:.25s var(--e)}
+.ps-clear:hover{color:var(--navy);background:var(--mist)}
+.search-results{max-width:680px;margin:0 auto 36px;border:1px solid var(--line-l);background:var(--white)}
+.sr-item{display:flex;align-items:center;gap:16px;padding:15px 20px;border-bottom:1px solid var(--line-l);cursor:pointer;transition:background .25s var(--e)}
+.sr-item:last-child{border-bottom:0}
+.sr-item:hover{background:var(--mist)}
+.sr-thumb{width:48px;height:48px;border-radius:2px;object-fit:cover;flex:none;display:block}
+.sr-thumb-ph{width:48px;height:48px;border-radius:2px;flex:none;background:var(--mist);display:flex;align-items:center;justify-content:center;color:var(--slate)}
+.sr-thumb-ph svg{width:18px;height:18px;opacity:.5}
+.sr-name{font-weight:600;color:var(--navy);font-size:1rem}
+.sr-cat{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dk);margin-top:3px}
+.sr-empty{padding:32px 24px;text-align:center;color:var(--slate);font-size:.95rem;line-height:1.6}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:38px}
 .chip{font-size:.9rem;font-weight:500;padding:11px 20px;border-radius:2px;border:1px solid var(--line-l);background:var(--white);color:var(--slate);transition:.25s var(--e)}
 .chip:hover{border-color:var(--navy);color:var(--navy)}
@@ -789,6 +806,13 @@ p{margin:0 0 1.1em}
 
   <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
     <div class="wrap">
+      <div class="prod-search">
+        <svg class="ps-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="prodSearch" placeholder="Produkt suchen, z. B. Cumin, Servietten, Lunchbox …" autocomplete="off">
+        <button type="button" id="prodSearchClear" class="ps-clear" aria-label="Suche löschen" hidden>&times;</button>
+      </div>
+      <div class="search-results" id="searchResults" hidden></div>
+      <div id="catalogView">
       <div class="filters" id="filters">
         <button class="chip on" data-f="alle">Alle Produkte</button>
         <button class="chip" data-f="menueschalen-boxen">Menüschalen &amp; Boxen</button>
@@ -803,6 +827,7 @@ p{margin:0 0 1.1em}
         <article class="prod reveal" data-slug="einwegartikel-folien" tabindex="0" role="link" aria-label="Einwegartikel &amp; Folien ansehen"><span class="n">03</span><h3>Einwegartikel &amp; Folien</h3><p>Holzgabeln und Besteck, Alu- und Frischhaltefolie, verschiedene Hygieneartikel</p><span class="prod-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
         <article class="prod reveal" data-slug="tragetaschen-tueten" tabindex="0" role="link" aria-label="Tragetaschen &amp; Tüten ansehen"><span class="n">04</span><h3>Tragetaschen &amp; Tüten</h3><p>Papiertragetaschen, Bäckertüten, Snacktüten und Hemdchentragetaschen</p><span class="prod-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
         <article class="prod reveal" data-slug="gewuerze" tabindex="0" role="link" aria-label="Gewürze ansehen"><span class="n">05</span><h3>Gewürze</h3><p>Verschiedene Gewürze und Gewürzmischungen für die Gastronomie</p><span class="prod-ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></article>
+      </div>
       </div>
       <div class="note reveal">
         <div>
@@ -1060,15 +1085,15 @@ p{margin:0 0 1.1em}
     'einwegartikel-folien':{name:'Einwegartikel und Folien',products:['Holzgabeln','Besteck','Alufolie','Frischhaltefolie','Hygieneartikel']},
     'tragetaschen-tueten':{name:'Tragetaschen und Tüten',products:['Papiertragetaschen','Bäckertüten','Snacktüten','Hemdchentragetaschen']},
     'gewuerze':{name:'Gewürze',products:[
-      {name:'Kreuzkümmel',img:'gewuerz-kreuzkuemmel.jpg'},
+      {name:'Kreuzkümmel',img:'gewuerz-kreuzkuemmel.jpg',alias:'cumin'},
       {name:'Griechische Gewürzmischung',img:'gewuerz-griechisch.jpg'},
-      {name:'Knoblauchpulver',img:'gewuerz-knoblauch.jpg'},
-      {name:'Muskatnuss gemahlen',img:'gewuerz-muskat.jpg'},
-      {name:'Pommes-Gewürz',img:'gewuerz-pommes.jpg'},
-      {name:'Pfeffer gemahlen',img:'gewuerz-pfeffer.jpg'},
-      {name:'Pfeffer weiß',img:'gewuerz-pfeffer-weiss.jpg'},
-      {name:'Paprika edelsüß',img:'gewuerz-paprika-edelsuess.jpg'},
-      {name:'Zwiebelpulver',img:'gewuerz-zwiebel.jpg'}
+      {name:'Knoblauchpulver',img:'gewuerz-knoblauch.jpg',alias:'garlic knoblauch'},
+      {name:'Muskatnuss gemahlen',img:'gewuerz-muskat.jpg',alias:'nutmeg muskat'},
+      {name:'Pommes-Gewürz',img:'gewuerz-pommes.jpg',alias:'pommes gewürz fritten'},
+      {name:'Pfeffer gemahlen',img:'gewuerz-pfeffer.jpg',alias:'pepper'},
+      {name:'Pfeffer weiß',img:'gewuerz-pfeffer-weiss.jpg',alias:'white pepper'},
+      {name:'Paprika edelsüß',img:'gewuerz-paprika-edelsuess.jpg',alias:'paprika'},
+      {name:'Zwiebelpulver',img:'gewuerz-zwiebel.jpg',alias:'onion zwiebel'}
     ]}
   };
   function renderCategory(slug){
@@ -1095,6 +1120,55 @@ p{margin:0 0 1.1em}
     });
     return true;
   }
+
+  /* ---------- Produktsuche ---------- */
+  var SEARCH_INDEX=[];
+  Object.keys(CATEGORIES).forEach(function(slug){
+    var c=CATEGORIES[slug];
+    c.products.forEach(function(p){
+      var name=(typeof p==='string')?p:p.name;
+      var img=(typeof p==='object'&&p.img)?p.img:null;
+      var alias=(typeof p==='object'&&p.alias)?p.alias:'';
+      SEARCH_INDEX.push({name:name,catName:c.name,catSlug:slug,img:img,search:(name+' '+alias).toLowerCase()});
+    });
+  });
+  var searchInput=document.getElementById('prodSearch');
+  var searchResultsEl=document.getElementById('searchResults');
+  var searchClearBtn=document.getElementById('prodSearchClear');
+  var catalogView=document.getElementById('catalogView');
+  function esc(s){return s.replace(/[&<>]/g,function(c){return c==='&'?'&amp;':c==='<'?'&lt;':'&gt;';});}
+  function renderSearch(q){
+    q=q.trim().toLowerCase();
+    searchClearBtn.hidden=!q;
+    if(!q){
+      searchResultsEl.hidden=true;
+      catalogView.style.display='';
+      return;
+    }
+    catalogView.style.display='none';
+    var matches=SEARCH_INDEX.filter(function(item){return item.search.indexOf(q)>-1;});
+    searchResultsEl.hidden=false;
+    if(!matches.length){
+      searchResultsEl.innerHTML='<div class="sr-empty">Keine Treffer für „'+esc(q)+'". Schreiben Sie uns, wir beschaffen es in der Regel trotzdem.</div>';
+      return;
+    }
+    searchResultsEl.innerHTML=matches.slice(0,12).map(function(item){
+      var thumb=item.img
+        ? '<img class="sr-thumb" src="'+item.img+'" alt="">'
+        : '<span class="sr-thumb-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1.5"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5.5-5.5L4 21"/></svg></span>';
+      return '<div class="sr-item" data-slug="'+item.catSlug+'">'+thumb+'<div><div class="sr-name">'+esc(item.name)+'</div><div class="sr-cat">'+esc(item.catName)+'</div></div></div>';
+    }).join('');
+  }
+  searchInput.addEventListener('input',function(){ renderSearch(this.value); });
+  searchResultsEl.addEventListener('click',function(e){
+    var item=e.target.closest('.sr-item'); if(!item) return;
+    goTo('#/produkte/kategorie/'+item.getAttribute('data-slug'));
+  });
+  searchClearBtn.addEventListener('click',function(){
+    searchInput.value='';
+    renderSearch('');
+    searchInput.focus();
+  });
 
   /* ---------- Seitenübergang ---------- */
   var pt=document.getElementById('pageTransition');
