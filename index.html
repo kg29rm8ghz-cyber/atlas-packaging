@@ -245,8 +245,11 @@ p{margin:0 0 1.1em}
 .phead-in{position:relative;z-index:2}
 .phead h1{font-size:clamp(2.5rem,6vw,5rem);color:var(--white);margin:18px 0 20px}
 .phead p{color:var(--on-dark-2);max-width:58ch;margin:0}
-.phead-perks{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:30px}
-.perk{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);font-weight:500}
+.phead-split{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.phead-main{flex:1 1 480px}
+.phead-main p{margin-top:20px}
+.phead-perks{display:flex;flex-direction:column;gap:18px;flex:0 0 auto;padding:30px 34px;border:1px solid var(--line-d);background:rgba(255,255,255,.04)}
+.perk{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);font-weight:500;white-space:nowrap}
 .perk svg{width:17px;height:17px;color:var(--gold-lt);flex:none}
 .crumb{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-3)}
 .crumb b{color:var(--gold-lt);font-weight:400}
@@ -827,10 +830,12 @@ p{margin:0 0 1.1em}
 
 <!-- ================= PRODUKTE ================= -->
 <section class="page" id="p-produkte">
-  <div class="phead"><div class="wrap phead-in">
-    <span class="crumb">Start <b>/</b> Produkte</span>
-    <h1>Sortiment</h1>
-    <p>Unser Kernsortiment für Gastronomiebetriebe. Artikel, die hier nicht aufgeführt sind, beschaffen wir in der Regel trotzdem.</p>
+  <div class="phead"><div class="wrap phead-in phead-split">
+    <div class="phead-main">
+      <span class="crumb">Start <b>/</b> Produkte</span>
+      <h1>Sortiment</h1>
+      <p>Unser Kernsortiment für Gastronomiebetriebe. Artikel, die hier nicht aufgeführt sind, beschaffen wir in der Regel trotzdem.</p>
+    </div>
     <div class="phead-perks">
       <span class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>Mengenrabatt auf Anfrage</span>
       <span class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Angebot am selben Werktag</span>
