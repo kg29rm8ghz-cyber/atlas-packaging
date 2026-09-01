@@ -239,6 +239,10 @@ p{margin:0 0 1.1em}
 .idx .ar{width:42px;height:42px;border:1px solid var(--line-d);border-radius:50%;display:grid;place-items:center;color:var(--on-dark-2);transition:.4s var(--e);justify-self:end}
 .idx .ar svg{width:15px;height:15px}
 .idx a:hover .ar{background:var(--gold);border-color:var(--gold);color:var(--navy);transform:rotate(-45deg)}
+.compact-sec{padding:clamp(48px,5.5vw,72px) 0}
+.idx.compact a{padding:16px 0}
+.idx.compact .ar{width:34px;height:34px}
+.idx.compact .ar svg{width:13px;height:13px}
 
 @keyframes draw{to{stroke-dashoffset:0}}
 
@@ -617,18 +621,29 @@ p{margin:0 0 1.1em}
     </div>
   </header>
 
-  <!-- ============ MARKENBAND ============ -->
-  <section class="brandband">
-    <div class="wrap bb-in">
-      <svg class="bb-mark reveal" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <rect x="3" y="3" width="26" height="26" rx="1.5" stroke="currentColor" stroke-width="1.4" opacity=".4"/>
-        <path d="M9 23 16 8l7 15" stroke="#C9972A" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M12.4 18h7.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <div class="reveal" data-d="1">
-        <div class="bb-name">ATLAS <em>Packaging Solutions</em></div>
-        <span class="bb-sub">Inhabergeführter Großhandel · Hamburg</span>
-        <p class="bb-txt">Ein Team, ein eigenes Lager, ein eigenes Fahrzeug — und Kunden, die uns beim Vornamen kennen. Wir beliefern Restaurants, Imbisse und Cafés im Hamburger Raum persönlich, statt sie durch ein Bestellportal zu schicken.</p>
+  <!-- Einblicke -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="split-head">
+        <div class="reveal">
+          <span class="tag">Einblicke</span>
+          <h2>Unser Betrieb.</h2>
+        </div>
+        <p class="lead reveal" data-d="1">Eigenes Lager, eigenes Fahrzeug, eigenes Team — das steckt hinter jeder Lieferung, die bei Ihnen ankommt.</p>
+      </div>
+      <div class="proof-gallery">
+        <figure class="pg-item reveal">
+          <img src="proof-lager.jpg" alt="Palettierte Kartons im Lager von Atlas Packaging Solutions" loading="lazy">
+          <figcaption><b>Eigenes Lager</b><span>Sofort greifbar, keine Wartezeit auf den Hersteller</span></figcaption>
+        </figure>
+        <figure class="pg-item reveal" data-d="1">
+          <img src="proof-lieferwagen.jpg" alt="Lieferfahrzeug von Atlas Packaging Solutions in Hamburg" loading="lazy">
+          <figcaption><b>Eigene Zustellung</b><span>Pünktlich mit eigenem Fahrzeug, ohne Spedition</span></figcaption>
+        </figure>
+        <figure class="pg-item reveal" data-d="2">
+          <img src="proof-team.jpg" alt="Das Team von Atlas Packaging Solutions vor dem Lager" loading="lazy">
+          <figcaption><b>Unser Team</b><span>Feste Ansprechpartner statt Callcenter</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -697,70 +712,8 @@ p{margin:0 0 1.1em}
     </div>
   </section>
 
-  <!-- Leistungen -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="split-head">
-        <div class="reveal">
-          <span class="tag">Was uns unterscheidet</span>
-          <h2>Ein Lieferant, der<br>ans Telefon geht.</h2>
-        </div>
-        <p class="lead reveal" data-d="1">Wir sind kein Katalogversand. Wir kennen Ihre Karte, Ihren Verbrauch und Ihre Lieferzeiten — und richten das Sortiment danach aus.</p>
-      </div>
-      <div class="caps">
-        <div class="cap reveal">
-          <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8.5 12 4l9 4.5v7L12 20l-9-4.5v-7Z"/><path d="M3 8.5 12 13l9-4.5M12 13v7"/></svg>
-          <span class="cap-n">01</span><h3>Eigenes Lager</h3>
-          <p>Standardartikel liegen bei uns, nicht beim Hersteller. Keine Vorlaufzeit, keine Mindestmenge aus fremden Katalogen.</p>
-        </div>
-        <div class="cap reveal" data-d="1">
-          <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 7h11v9H2z"/><path d="M13 10h4.5L21 13.2V16h-8z"/><circle cx="6.5" cy="18" r="1.9"/><circle cx="17" cy="18" r="1.9"/></svg>
-          <span class="cap-n">02</span><h3>Eigener Fuhrpark</h3>
-          <p>Wir stellen selbst zu — zu einer festen Uhrzeit, die nicht mitten in Ihren Mittagsservice fällt.</p>
-        </div>
-        <div class="cap reveal" data-d="2">
-          <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-9A8.4 8.4 0 1 1 21 11.5Z"/><path d="M8.5 11h7M8.5 14.5h4"/></svg>
-          <span class="cap-n">03</span><h3>Nachbestellung per Nachricht</h3>
-          <p>Ihre letzte Bestellung ist hinterlegt. „Wie beim letzten Mal, doppelt Servietten" genügt — kein Portal, kein Login.</p>
-        </div>
-        <div class="cap reveal" data-d="3">
-          <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4 6.5v5.2c0 4.6 3.3 8.4 8 9.3 4.7-.9 8-4.7 8-9.3V6.5L12 3Z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg>
-          <span class="cap-n">04</span><h3>Sortiment für griechische Küche</h3>
-          <p>Alu-Schalen, Servietten mit griechischem Motiv aus eigener Produktion und viele weitere Artikel.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Einblicke -->
-  <section class="sec">
-    <div class="wrap">
-      <div class="split-head">
-        <div class="reveal">
-          <span class="tag">Einblicke</span>
-          <h2>Kein Stockfoto.<br>Unser Betrieb.</h2>
-        </div>
-        <p class="lead reveal" data-d="1">Eigenes Lager, eigenes Fahrzeug, eigenes Team — das steckt hinter jeder Lieferung, die bei Ihnen ankommt.</p>
-      </div>
-      <div class="proof-gallery">
-        <figure class="pg-item reveal">
-          <img src="proof-lager.jpg" alt="Palettierte Kartons im Lager von Atlas Packaging Solutions" loading="lazy">
-          <figcaption><b>Eigenes Lager</b><span>Sofort greifbar, keine Wartezeit auf den Hersteller</span></figcaption>
-        </figure>
-        <figure class="pg-item reveal" data-d="1">
-          <img src="proof-lieferwagen.jpg" alt="Lieferfahrzeug von Atlas Packaging Solutions in Hamburg" loading="lazy">
-          <figcaption><b>Eigene Zustellung</b><span>Pünktlich mit eigenem Fahrzeug, ohne Spedition</span></figcaption>
-        </figure>
-        <figure class="pg-item reveal" data-d="2">
-          <img src="proof-team.jpg" alt="Das Team von Atlas Packaging Solutions vor dem Lager" loading="lazy">
-          <figcaption><b>Unser Team</b><span>Feste Ansprechpartner statt Callcenter</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
   <!-- Sortiment -->
-  <section class="sec grey">
+  <section class="sec grey compact-sec">
     <div class="wrap">
       <div class="split-head">
         <div class="reveal">
@@ -769,7 +722,7 @@ p{margin:0 0 1.1em}
         </div>
         <p class="lead reveal" data-d="1">Fünf Warengruppen decken den täglichen Bedarf. Artikel außerhalb der Liste beschaffen wir auf Anfrage.</p>
       </div>
-      <div class="idx lt">
+      <div class="idx lt compact">
         <a href="#/produkte/kategorie/menueschalen-boxen" class="reveal"><span class="n">01</span><h3>Menüschalen &amp; Boxen</h3><p>Ungeteilt, zweigeteilt und dreigeteilt, dazu Lunchboxen, Lunchbox Mini und Hamburgerboxen</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         <a href="#/produkte/kategorie/servietten-tischbedarf" class="reveal"><span class="n">02</span><h3>Servietten &amp; Tischbedarf</h3><p>Servietten in verschiedenen Größen und Farben, Küchenrolle und Papier</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         <a href="#/produkte/kategorie/einwegartikel-folien" class="reveal"><span class="n">03</span><h3>Einwegartikel &amp; Folien</h3><p>Holzgabeln und Besteck, Alu- und Frischhaltefolie, verschiedene Hygieneartikel</p><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
