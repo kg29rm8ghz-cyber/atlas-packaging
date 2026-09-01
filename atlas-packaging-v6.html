@@ -267,8 +267,11 @@ p{margin:0 0 1.1em}
 @keyframes perkShine{0%,15%{left:-60%}70%,100%{left:130%}}
 .perk{position:relative;z-index:1;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);font-weight:500;white-space:nowrap}
 .perk svg{width:17px;height:17px;color:var(--gold-lt);flex:none}
-.perk:first-child svg{animation:perkPulse 2.6s ease-in-out infinite}
-@keyframes perkPulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(224,179,84,0))}50%{transform:scale(1.22);filter:drop-shadow(0 0 5px rgba(224,179,84,.85))}}
+.perk svg{animation:perkPulse 3s ease-in-out infinite}
+.perk:nth-child(1) svg{animation-delay:0s}
+.perk:nth-child(2) svg{animation-delay:1s}
+.perk:nth-child(3) svg{animation-delay:2s}
+@keyframes perkPulse{0%,20%,100%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(224,179,84,0))}10%{transform:scale(1.55);filter:drop-shadow(0 0 10px rgba(224,179,84,1))}}
 .crumb{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-3)}
 .crumb b{color:var(--gold-lt);font-weight:400}
 .crumb a{color:inherit;transition:color .2s var(--e)}
