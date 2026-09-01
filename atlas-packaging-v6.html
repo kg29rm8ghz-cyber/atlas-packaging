@@ -245,6 +245,9 @@ p{margin:0 0 1.1em}
 .phead-in{position:relative;z-index:2}
 .phead h1{font-size:clamp(2.5rem,6vw,5rem);color:var(--white);margin:18px 0 20px}
 .phead p{color:var(--on-dark-2);max-width:58ch;margin:0}
+.phead-perks{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:30px}
+.perk{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);font-weight:500}
+.perk svg{width:17px;height:17px;color:var(--gold-lt);flex:none}
 .crumb{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-3)}
 .crumb b{color:var(--gold-lt);font-weight:400}
 .crumb a{color:inherit;transition:color .2s var(--e)}
@@ -828,6 +831,11 @@ p{margin:0 0 1.1em}
     <span class="crumb">Start <b>/</b> Produkte</span>
     <h1>Sortiment</h1>
     <p>Unser Kernsortiment für Gastronomiebetriebe. Artikel, die hier nicht aufgeführt sind, beschaffen wir in der Regel trotzdem.</p>
+    <div class="phead-perks">
+      <span class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>Mengenrabatt auf Anfrage</span>
+      <span class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Angebot am selben Werktag</span>
+      <span class="perk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Keine Mindestbestellmenge</span>
+    </div>
   </div></div>
 
   <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
