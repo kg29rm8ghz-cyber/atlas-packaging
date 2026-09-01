@@ -216,6 +216,16 @@ p{margin:0 0 1.1em}
 .cap h3{margin-bottom:11px}
 .cap p{font-size:.96rem;color:var(--slate);margin:0}
 
+.proof-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pg-item{position:relative;aspect-ratio:4/3;overflow:hidden;margin:0;border-radius:2px}
+.pg-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s var(--e)}
+.pg-item:hover img{transform:scale(1.06)}
+.pg-item::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,31,58,.88),rgba(11,31,58,.05) 60%)}
+.pg-item figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 24px;z-index:2}
+.pg-item figcaption b{display:block;font-family:var(--display);font-size:1.14rem;font-weight:700;font-stretch:110%;color:var(--white);margin-bottom:5px}
+.pg-item figcaption span{display:block;font-size:.86rem;color:var(--on-dark-2);line-height:1.45}
+@media(max-width:860px){.proof-gallery{grid-template-columns:1fr}.pg-item{aspect-ratio:16/10}}
+
 .idx{border-top:1px solid var(--line-d)}
 .idx a{display:grid;grid-template-columns:64px 1.05fr 1.35fr 46px;gap:22px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line-d);position:relative;transition:padding .4s var(--e)}
 .idx a::before{content:"";position:absolute;inset:0;background:rgba(255,255,255,.055);transform:scaleY(0);transform-origin:bottom;transition:transform .45s var(--e)}
@@ -718,6 +728,33 @@ p{margin:0 0 1.1em}
           <span class="cap-n">04</span><h3>Sortiment für griechische Küche</h3>
           <p>Alu-Schalen, Servietten mit griechischem Motiv aus eigener Produktion und viele weitere Artikel.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Einblicke -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="split-head">
+        <div class="reveal">
+          <span class="tag">Einblicke</span>
+          <h2>Kein Stockfoto.<br>Unser Betrieb.</h2>
+        </div>
+        <p class="lead reveal" data-d="1">Eigenes Lager, eigenes Fahrzeug, eigenes Team — das steckt hinter jeder Lieferung, die bei Ihnen ankommt.</p>
+      </div>
+      <div class="proof-gallery">
+        <figure class="pg-item reveal">
+          <img src="proof-lager.jpg" alt="Palettierte Kartons im Lager von Atlas Packaging Solutions" loading="lazy">
+          <figcaption><b>Eigenes Lager</b><span>Sofort greifbar, keine Wartezeit auf den Hersteller</span></figcaption>
+        </figure>
+        <figure class="pg-item reveal" data-d="1">
+          <img src="proof-lieferwagen.jpg" alt="Lieferfahrzeug von Atlas Packaging Solutions in Hamburg" loading="lazy">
+          <figcaption><b>Eigene Zustellung</b><span>Pünktlich mit eigenem Fahrzeug, ohne Spedition</span></figcaption>
+        </figure>
+        <figure class="pg-item reveal" data-d="2">
+          <img src="proof-team.jpg" alt="Das Team von Atlas Packaging Solutions vor dem Lager" loading="lazy">
+          <figcaption><b>Unser Team</b><span>Feste Ansprechpartner statt Callcenter</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
