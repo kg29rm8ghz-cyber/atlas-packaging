@@ -327,6 +327,10 @@ p{margin:0 0 1.1em}
 .note p{margin:0;color:var(--on-dark-2);font-size:.98rem;max-width:62ch}
 .note h3{margin-bottom:10px}
 
+.cat-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;font-family:var(--mono);font-size:.78rem;font-weight:600;letter-spacing:.04em;color:var(--slate);text-decoration:none;transition:color .25s var(--e),transform .25s var(--e)}
+.cat-back svg{width:16px;height:16px;flex:none;transition:transform .25s var(--e)}
+.cat-back:hover{color:var(--navy)}
+.cat-back:hover svg{transform:translateX(-3px)}
 .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
 .catp{background:var(--white);display:flex;flex-direction:column}
 .catp-ph{aspect-ratio:1/1;background:var(--mist);border-bottom:1px solid var(--line-l);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--slate);overflow:hidden}
@@ -874,6 +878,10 @@ p{margin:0 0 1.1em}
 
   <section class="sec" style="padding-top:clamp(48px,5vw,72px)">
     <div class="wrap">
+      <a href="#/produkte" class="cat-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        Zurück zur Übersicht
+      </a>
       <div class="cat-grid" id="catGrid"></div>
       <a href="#/produkte" class="btn b-out" style="margin-top:40px">Zurück zur Übersicht</a>
     </div>
